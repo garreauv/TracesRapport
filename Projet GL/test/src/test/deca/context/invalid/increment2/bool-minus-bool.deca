@@ -1,0 +1,9 @@
+// Test : bool := -bool
+
+// Historique : cree le 11/01/2023
+
+{
+    boolean a,b;
+
+    a = -b;
+}

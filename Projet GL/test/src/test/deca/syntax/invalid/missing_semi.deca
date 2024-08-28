@@ -1,0 +1,12 @@
+// Description:
+//    print sans ;
+//
+// Resultats:
+//     missing ';' at '}'
+//
+// Historique:
+//    cree le 10/01/2023
+
+{
+    print(a)
+}

@@ -1,0 +1,13 @@
+// Description:
+//    Programme testant ++ 
+//
+// Resultats:
+//    mismatched input '+' 
+//
+// Historique:
+//    cree le 10/01/2023
+
+
+{
+    i++;
+}

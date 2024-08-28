@@ -1,0 +1,15 @@
+//ok
+
+// Test a == null without Initialization
+
+// Historique : cree le 21/01/2023
+
+class A{}
+
+{
+    A a = new A();
+    if(a == null){
+        print("error");
+    }
+    else{print("ok");}
+}

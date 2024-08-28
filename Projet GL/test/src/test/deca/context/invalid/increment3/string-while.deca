@@ -1,0 +1,12 @@
+//Rule : 3.29
+
+// Raison : Ligne 9 condition must be a boolean
+
+// Historique : cree le 12/01/2023
+
+{
+    //Must be refused
+    while("Ca marche"){
+        print("Danger");
+    }
+}

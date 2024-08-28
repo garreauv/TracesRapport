@@ -1,0 +1,20 @@
+// Description:
+//    Programme minimaliste testant readInt et readFloat
+//
+// Resultats:
+//    read.res
+//
+// Historique:
+//    cree le 09/01/2023
+
+{
+
+    int i;
+    float j;
+    i = readInt();
+    j = readFloat();
+
+    print(i, j);
+
+}
+

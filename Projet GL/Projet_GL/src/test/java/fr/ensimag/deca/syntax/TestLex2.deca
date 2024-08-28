@@ -1,0 +1,41 @@
+
+
+class C{
+    int x; 
+    int y;
+
+    void diag(int a) {
+        this.x = this.x*(5+2*(5+2)) + a;
+        this.y = this.y + a;
+    }
+
+    int getX(){
+        return this.x;
+    }
+
+ }
+
+ class A{
+    C c; 
+    boolean p = true;
+
+    boolean getP(){
+        return this.p;
+    }
+
+    C createC() {
+        this.c= new C();
+        this.c=null;
+        return this.c;
+    }
+
+ }
+
+{
+    A c = new A();
+    while(c.p){
+        println("false");
+    }
+}
+
+  

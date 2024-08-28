@@ -1,0 +1,10 @@
+// Description:
+//    fichier inclus lui-même
+//
+// Resultats:
+//    Circular include for file circular_include.deca
+//
+// Historique:
+//    cree le 10/01/2023
+
+#include "circular_include.deca"

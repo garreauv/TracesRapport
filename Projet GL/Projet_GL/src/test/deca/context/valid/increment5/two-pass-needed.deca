@@ -1,0 +1,12 @@
+// Test which need two passes to work
+
+// Historique : cree le 18/01/2023
+
+class A{
+    B b;
+}
+
+class B{
+    A a;
+}
+

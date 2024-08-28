@@ -1,0 +1,84 @@
+	ADDSP #7
+	TSTO #8
+	BOV stack_overflow_error
+; Code de la table des méthodes de Object
+	LOAD #null, R0
+	STORE R0, 1(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 2(GB)
+; Code de la table des méthodes de Ok
+	LEA 1(GB), R0
+	STORE R0, 3(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 4(GB)
+	LOAD code.Ok.o, R0
+	STORE R0, 5(GB)
+	LOAD code.Ok.k, R0
+	STORE R0, 6(GB)
+; Start main program
+; Variables declarations:
+	NEW #1, R2
+	LEA 3(GB), R0
+	STORE R0, 0(R2)
+	PUSH R2
+	BSR init.Ok
+	POP R2
+	STORE R2, 7(GB)
+; Beginning of main instructions:
+; Appel de méthode :
+	ADDSP #1
+	LOAD 7(GB), R2
+	STORE R2, 0(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ NullDeferenceError
+	LOAD 0(R2), R2
+	BSR 2(R2)
+	SUBSP #0
+	LOAD R0, R2
+	WNL
+	HALT
+; End main program
+code.Object.equals:
+	LOAD -2(LB), R0
+	CMP -3(LB), R0
+	SEQ R0
+	RTS
+init.Ok:
+	TSTO #0
+	RTS
+code.Ok.o:
+; Sauvegarde des registres : 
+	TSTO #0
+	BOV stack_overflow_error
+	WSTR "o"
+; Appel de méthode :
+	ADDSP #1
+	LOAD -2(LB), R2
+	STORE R2, 0(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ NullDeferenceError
+	LOAD 0(R2), R2
+	BSR 3(R2)
+	SUBSP #0
+	LOAD R0, R2
+fin.Ok.o:
+; Restauration des registres : 
+	RTS
+code.Ok.k:
+; Sauvegarde des registres : 
+	TSTO #0
+	BOV stack_overflow_error
+	WSTR "k"
+fin.Ok.k:
+; Restauration des registres : 
+	RTS
+NullDeferenceError:
+	WSTR "Error: deferencement null"
+	WNL
+	ERROR
+stack_overflow_error:
+	WSTR "Error: Stack Overflow"
+	WNL
+	ERROR

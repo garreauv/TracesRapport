@@ -1,0 +1,9 @@
+// Test (int) float
+
+// Historique : cree le 22/01/2023
+
+{
+    float f = 1.0;
+
+    int x = (int) f;
+}

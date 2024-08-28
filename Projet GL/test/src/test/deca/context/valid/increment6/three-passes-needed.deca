@@ -1,0 +1,25 @@
+// Three pass needed test
+
+// Historique : cree le 18/01/2023
+
+class A{
+    B b;
+}
+
+class B{
+    A a;
+}
+
+class Parcours{
+    void parcoursA(A a){
+        if(a != null){
+            parcoursB(a.b);
+        }
+    }
+
+    void parcoursB(B b){
+        if(b != null){
+            parcoursA(b.a);
+        }
+    }
+}

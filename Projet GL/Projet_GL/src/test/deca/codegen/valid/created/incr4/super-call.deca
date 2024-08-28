@@ -1,0 +1,19 @@
+//ok
+
+// Test call of a super method
+
+// Historique : cree le 21/01/2023
+
+class A{
+    void ok(){
+        print("ok");
+    }
+}
+
+class B extends A{}
+
+{
+    B b = new B();
+    b.ok();
+    println();
+}

@@ -1,0 +1,14 @@
+//Rule : 3.29
+
+// Raison : Ligne 11 condition must be a boolean
+
+// Historique : cree le 09/01/2023
+
+{
+    float a = 2;
+
+    //Must be refused
+    if(a){
+        a = 3.1;
+    }
+}

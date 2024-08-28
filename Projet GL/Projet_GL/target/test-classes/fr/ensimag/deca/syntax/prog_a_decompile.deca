@@ -1,0 +1,14 @@
+{
+    int a = 2;
+    void y;
+
+    float a = 2*y;
+
+    if(true && false){
+        println(2+3);
+        print("et la");
+    }
+    else{
+        println(4-1);
+    }
+}

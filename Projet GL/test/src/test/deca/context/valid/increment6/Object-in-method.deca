@@ -1,0 +1,11 @@
+// Test Object in a method
+
+// Historique : cree le 21/01/2023
+
+class A{
+    protected int x;
+
+    void m(Object o){
+        x = 2;
+    }
+}

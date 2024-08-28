@@ -1,0 +1,7 @@
+// test public field
+
+// Historique : cree le 22/01/2023
+
+class A{
+    public int a;
+}

@@ -1,0 +1,18 @@
+// Test bad affectation method type
+
+// Historique : cree le 21/01/2023
+
+class A{
+    protected int x;
+
+    int getX(){
+        return x;
+    }
+}
+
+{
+    A a = new A();
+
+    // Must be refused
+    boolean b = a.getX();
+}

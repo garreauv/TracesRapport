@@ -1,0 +1,17 @@
+//Test already declared
+
+//Rule : 3.12
+
+// Raison : Ligne 11 x already declared
+
+// Historique : cree le 09/01/2023
+
+{
+    int x = 3;
+
+    //Must be refused;
+    int x = 5;
+}
+
+
+

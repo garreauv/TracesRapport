@@ -1,0 +1,42 @@
+//okokokokok
+
+// Complex test which needs a lots of things
+
+// Historique : cree le 21/01/2022
+
+class A{
+    protected int x;
+
+    int getX(){
+        return this.x;
+    }
+
+    void setX(int x){
+        this.x = x;
+    }
+}
+
+class B extends A{}
+
+class C{
+    B b = new B();
+
+    void incr(){
+        this.b.setX(this.b.getX() + 1);
+    }
+}
+
+class D extends C{
+    boolean bool = true;
+}
+
+{
+    D d = new D();
+    d.b.setX(0);
+    while(d.bool){
+        d.bool = d.b.getX() < 5;
+        d.incr();
+        print("ok");
+    }
+    println();
+}

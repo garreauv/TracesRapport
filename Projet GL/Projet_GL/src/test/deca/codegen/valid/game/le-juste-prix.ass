@@ -1,0 +1,317 @@
+	ADDSP #12
+	TSTO #16
+	BOV stack_overflow_error
+; Code de la table des méthodes de Object
+	LOAD #null, R0
+	STORE R0, 1(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 2(GB)
+; Code de la table des méthodes de Justeprix
+	LEA 1(GB), R0
+	STORE R0, 3(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 4(GB)
+	LOAD code.Justeprix.lagaffe, R0
+	STORE R0, 5(GB)
+	LOAD code.Justeprix.setPrix, R0
+	STORE R0, 6(GB)
+	LOAD code.Justeprix.chrono, R0
+	STORE R0, 7(GB)
+	LOAD code.Justeprix.jeu, R0
+	STORE R0, 8(GB)
+; Start main program
+; Variables declarations:
+	NEW #4, R2
+	LEA 3(GB), R0
+	STORE R0, 0(R2)
+	PUSH R2
+	BSR init.Justeprix
+	POP R2
+	STORE R2, 12(GB)
+; Beginning of main instructions:
+	WSTR "Bonjour et bienvenue au Juste Prix!"
+	WNL
+	WSTR "Voulez vous jouer seul ou à plusieurs (une personne rentre le prix, l'autre le devine) ?"
+	WNL
+	WSTR "Tapez 0 pour jouer seul, tapez 1 pour jouer à plusieurs"
+	WNL
+	RINT
+	BOV io_error
+	LOAD R1, R2
+	STORE R2, 9(GB)
+	LOAD 9(GB), R2
+	LOAD #0, R3
+	CMP R3, R2
+	BNE E_Sinon.11
+	WSTR "Vous avez décidé de jouer seul, devinez le prix (entier) d'une renault Zoé et "
+	WNL
+; Appel de méthode :
+	ADDSP #2
+	LOAD 12(GB), R2
+	STORE R2, 0(SP)
+	LOAD #1800, R2
+	STORE R2, -1(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ NullDeferenceError
+	LOAD 0(R2), R2
+	BSR 3(R2)
+	SUBSP #1
+	LOAD R0, R2
+	BRA E_Cond.2
+E_Debut.2:
+	RINT
+	BOV io_error
+	LOAD R1, R2
+	STORE R2, 11(GB)
+; Appel de méthode :
+	ADDSP #2
+	LOAD 12(GB), R2
+	STORE R2, 0(SP)
+	LOAD 11(GB), R2
+	STORE R2, -1(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ NullDeferenceError
+	LOAD 0(R2), R2
+	BSR 5(R2)
+	SUBSP #1
+	LOAD R0, R2
+E_Cond.2:
+	LOAD 12(GB), R3
+	LOAD R3, R1
+	LOAD 3(R1), R3
+	CMP #1, R3
+	BNE E_Debut.2
+	BRA E_Fin.1
+E_Sinon.11:
+	LOAD 9(GB), R2
+	LOAD #1, R3
+	CMP R3, R2
+	BNE E_Sinon.32
+	WSTR "Vous avez décidé de jouer à deux, rentrez donc un prix (entier) :"
+	WNL
+	RINT
+	BOV io_error
+	LOAD R1, R2
+	STORE R2, 10(GB)
+; Appel de méthode :
+	ADDSP #2
+	LOAD 12(GB), R2
+	STORE R2, 0(SP)
+	LOAD 10(GB), R2
+	STORE R2, -1(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ NullDeferenceError
+	LOAD 0(R2), R2
+	BSR 3(R2)
+	SUBSP #1
+	LOAD R0, R2
+	WSTR "A vous de devinez le prix (entier) qu'a rentré votre ami"
+	WNL
+	BRA E_Cond.4
+E_Debut.4:
+	RINT
+	BOV io_error
+	LOAD R1, R2
+	STORE R2, 11(GB)
+; Appel de méthode :
+	ADDSP #2
+	LOAD 12(GB), R2
+	STORE R2, 0(SP)
+	LOAD 11(GB), R2
+	STORE R2, -1(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ NullDeferenceError
+	LOAD 0(R2), R2
+	BSR 5(R2)
+	SUBSP #1
+	LOAD R0, R2
+E_Cond.4:
+	LOAD 12(GB), R3
+	LOAD R3, R1
+	LOAD 3(R1), R3
+	CMP #1, R3
+	BNE E_Debut.4
+	BRA E_Fin.3
+E_Sinon.32:
+	LOAD 9(GB), R2
+	LOAD #0, R3
+	CMP R3, R2
+	BEQ E_Sinon.53
+	LOAD 9(GB), R3
+	LOAD #1, R4
+	CMP R4, R3
+	BEQ E_Sinon.53
+	WSTR "Ahah un petit malin qui s'amuse à rentrer ni 0 ni 1, je vous laisse relancer le programme pour la peine"
+	WNL
+	BRA E_Fin.5
+E_Sinon.53:
+E_Fin.5:
+E_Fin.3:
+E_Fin.1:
+	HALT
+; End main program
+code.Object.equals:
+	LOAD -2(LB), R0
+	CMP -3(LB), R0
+	SEQ R0
+	RTS
+init.Justeprix:
+; Initialisation de Justeprix.prix
+	LOAD #0, R0
+	LOAD -2(LB), R1
+	STORE R0, 1(R1)
+; Initialisation de Justeprix.try
+	LOAD #0, R0
+	LOAD -2(LB), R1
+	STORE R0, 2(R1)
+; Initialisation de Justeprix.win
+	LOAD -2(LB), R1
+	STORE R0, 3(R1)
+	TSTO #0
+; Initialisation explicite de Justeprix.prix
+; Initialisation explicite de Justeprix.try
+	LOAD #20, R2
+	STORE R2, 2(R1)
+; Initialisation explicite de Justeprix.win
+	LOAD #0, R2
+	STORE R2, 3(R1)
+	RTS
+code.Justeprix.lagaffe:
+; Sauvegarde des registres : 
+	TSTO #3
+	PUSH R3
+	PUSH R2
+	LOAD -3(LB), R2
+	LOAD 1(R2), R3
+	CMP R3, R2
+	BNE E_Sinon.64
+	WSTR "ET C'EST GAGNÉ!!!"
+	WNL
+	LOAD #1, R2
+	LOAD -2(LB), R1
+	STORE R2, 3(R1)
+	BRA E_Fin.6
+E_Sinon.64:
+	LOAD -3(LB), R2
+	LOAD 1(R2), R3
+	CMP R3, R2
+	BGE E_Sinon.75
+	WSTR "C'est plus"
+	WNL
+	BRA E_Fin.7
+E_Sinon.75:
+	LOAD -3(LB), R2
+	LOAD 1(R2), R3
+	CMP R3, R2
+	BLE E_Sinon.86
+	WSTR "C'est moins"
+	WNL
+	BRA E_Fin.8
+E_Sinon.86:
+E_Fin.8:
+E_Fin.7:
+E_Fin.6:
+fin.Justeprix.lagaffe:
+; Restauration des registres : 
+	POP R2
+	POP R3
+	RTS
+code.Justeprix.setPrix:
+; Sauvegarde des registres : 
+	TSTO #0
+	LOAD -3(LB), R2
+	LOAD -2(LB), R1
+	STORE R2, 1(R1)
+fin.Justeprix.setPrix:
+; Restauration des registres : 
+	RTS
+code.Justeprix.chrono:
+; Sauvegarde des registres : 
+	TSTO #3
+	PUSH R3
+	PUSH R2
+	LOAD 2(R2), R2
+	LOAD #0, R3
+	CMP R3, R2
+	BLE E_Sinon.97
+	LOAD -2(LB), R1
+	LOAD 2(R1), R2
+	LOAD #1, R3
+	SUB R3, R2
+	LOAD -2(LB), R1
+	STORE R2, 2(R1)
+	WSTR "Essais restant : "
+	LOAD 2(R2), R1
+	WINT
+	WNL
+	WSTR "Rentrez un nouveau prix"
+	WNL
+	BRA E_Fin.9
+E_Sinon.97:
+	WSTR "C'est perdu, dommage!"
+	WNL
+	LOAD #1, R2
+	LOAD -2(LB), R1
+	STORE R2, 3(R1)
+E_Fin.9:
+fin.Justeprix.chrono:
+; Restauration des registres : 
+	POP R2
+	POP R3
+	RTS
+code.Justeprix.jeu:
+; Sauvegarde des registres : 
+	TSTO #3
+	PUSH R3
+	PUSH R2
+; Appel de méthode :
+	ADDSP #2
+	LOAD -2(LB), R2
+	STORE R2, 0(SP)
+	LOAD -3(LB), R2
+	STORE R2, -1(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ NullDeferenceError
+	LOAD 0(R2), R2
+	BSR 2(R2)
+	SUBSP #1
+	LOAD R0, R2
+	LOAD 3(R2), R2
+	CMP #0, R2
+	BNE E_Sinon.108
+; Appel de méthode :
+	ADDSP #1
+	LOAD -2(LB), R2
+	STORE R2, 0(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ NullDeferenceError
+	LOAD 0(R2), R2
+	BSR 4(R2)
+	SUBSP #0
+	LOAD R0, R2
+	BRA E_Fin.10
+E_Sinon.108:
+E_Fin.10:
+fin.Justeprix.jeu:
+; Restauration des registres : 
+	POP R2
+	POP R3
+	RTS
+NullDeferenceError:
+	WSTR "Null deferencement error"
+	WNL
+	ERROR
+stack_overflow_error:
+	WSTR "Error: Stack Overflow"
+	WNL
+	ERROR
+io_error:
+	WSTR "Error: Input/Output Error"
+	WNL
+	ERROR

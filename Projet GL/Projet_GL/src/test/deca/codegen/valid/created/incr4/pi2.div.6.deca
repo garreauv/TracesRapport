@@ -1,0 +1,21 @@
+//
+
+
+// Cette somme tend vers pi^2 / 6
+class Sum{
+    int x=1;
+    float f = 0;
+    float s(int n){
+        while(x<n){
+            f = f + 1/(x*x);
+            x = x+1;
+        }
+        return f;
+    }
+}
+
+{
+    Sum sum = new Sum();
+    float f = sum.s(50);
+    print(f);
+}

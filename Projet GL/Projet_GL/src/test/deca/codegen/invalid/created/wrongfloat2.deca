@@ -1,0 +1,5 @@
+//Description 
+//Wrong type cast of float 
+{
+    float x = 1;
+}

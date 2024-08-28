@@ -1,0 +1,6 @@
+// Test : condition of rule 1.3
+
+// Historique : cree le 17/01/2023
+
+// Must be refused
+class A extends print{}

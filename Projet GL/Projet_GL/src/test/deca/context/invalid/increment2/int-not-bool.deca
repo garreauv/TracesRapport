@@ -1,0 +1,7 @@
+// Test int := not bool
+
+// Historique : cree le 11/01/2023
+
+{
+    int a = !true;
+}

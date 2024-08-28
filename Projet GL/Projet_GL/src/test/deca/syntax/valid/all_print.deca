@@ -1,0 +1,26 @@
+// Description:
+//    Programme minimaliste utilisant tous les print
+//
+// Resultats:
+//    all_print.res
+//
+// Historique:
+//    cree le 09/01/2023
+
+{
+        print("Hello");
+        println("Hello");
+        printx("Hello");
+        printlnx("Hello");
+
+        print(1.2);
+        println(1.2);
+        printx(1.2);
+        printlnx(1.2);
+
+        print(1);
+        println(1);
+        printx(1);
+        printlnx(1);
+}
+

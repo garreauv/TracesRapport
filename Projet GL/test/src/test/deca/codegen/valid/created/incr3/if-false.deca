@@ -1,0 +1,12 @@
+//ok
+{
+    if(false){
+        print("Erreur");
+    }
+    if(!true){
+        print("Erreur");
+    }
+    else{
+        println("ok");
+    }
+}

@@ -1,0 +1,130 @@
+	BOV stack_overflow_error
+	ADDSP #7
+	TSTO #8
+	BOV stack_overflow_error
+; Code de la table des méthodes de Object
+	LOAD #null, R0
+	STORE R0, 1(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 2(GB)
+; Code de la table des méthodes de Fibonacci
+	LEA 1(GB), R0
+	STORE R0, 3(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 4(GB)
+	LOAD code.Fibonacci.calc, R0
+	STORE R0, 5(GB)
+; Start main program
+; Variables declarations:
+	NEW #5, R2
+	LEA 3(GB), R0
+	STORE R0, 0(R2)
+	PUSH R2
+	BSR init.Fibonacci
+	POP R2
+	STORE R2, 6(GB)
+; Appel de méthode :
+	ADDSP #2
+	LOAD 6(GB), R2
+	STORE R2, 0(SP)
+	LOAD #7, R2
+	STORE R2, -1(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ NullDeferenceError
+	LOAD 0(R2), R2
+	BSR 2(R2)
+	SUBSP #1
+	STORE R2, 8(GB)
+; Beginning of main instructions:
+	LOAD 8(GB), R1
+	WINT
+	HALT
+; End main program
+code.Object.equals:
+	LOAD -2(LB), R0
+	CMP -3(LB), R0
+	SEQ R0
+	RTS
+init.Fibonacci:
+; Initialisation de Fibonacci.y
+	LOAD #0, R0
+	LOAD -2(LB), R1
+	STORE R0, 1(R1)
+; Initialisation de Fibonacci.x
+	LOAD #0, R0
+	LOAD -2(LB), R1
+	STORE R0, 2(R1)
+; Initialisation de Fibonacci.z
+	LOAD #0, R0
+	LOAD -2(LB), R1
+	STORE R0, 3(R1)
+; Initialisation de Fibonacci.n
+	LOAD #0, R0
+	LOAD -2(LB), R1
+	STORE R0, 4(R1)
+	TSTO #0
+; Initialisation explicite de Fibonacci.y
+	LOAD #1, R2
+	STORE R2, 1(R1)	; ICI
+; Initialisation explicite de Fibonacci.x
+	LOAD #1, R2
+	STORE R2, 2(R1)	; ICI
+; Initialisation explicite de Fibonacci.z
+; Initialisation explicite de Fibonacci.n
+	RTS
+code.Fibonacci.calc:
+; Sauvegarde des registres : 
+	TSTO #3
+	PUSH R3
+	PUSH R2
+	LOAD #0, R2
+	LOAD -2(LB), R1
+	STORE R2, 4(R1)
+	BRA E_Cond.1
+E_Debut.1:
+	LOAD -2(LB), R1
+	LOAD 2(R1), R2
+	LOAD -2(LB), R1
+	LOAD 1(R1), R3
+	ADD R3, R2
+	LOAD -2(LB), R1
+	STORE R2, 3(R1)
+	LOAD -2(LB), R1
+	LOAD 1(R1), R2
+	LOAD -2(LB), R1
+	STORE R2, 2(R1)
+	LOAD -2(LB), R1
+	LOAD 3(R1), R2
+	LOAD -2(LB), R1
+	STORE R2, 1(R1)
+	LOAD -2(LB), R1
+	LOAD 4(R1), R2
+	LOAD #1, R3
+	ADD R3, R2
+	LOAD -2(LB), R1
+	STORE R2, 4(R1)
+E_Cond.1:
+	LOAD -2(LB), R1
+	LOAD 4(R1), R2
+	LOAD -3(LB), R3
+	CMP R3, R2
+	BLT E_Debut.1
+	LOAD -2(LB), R1
+	LOAD 2(R1), R2
+	LOAD R2, R0
+	BRA fin.Fibonacci.calc
+fin.Fibonacci.calc:
+; Restauration des registres : 
+	POP R2
+	POP R3
+	LOAD R0, R2
+	RTS
+NullDeferenceError:
+	WSTR "Null deferencement error"
+	WNL
+	ERROR
+stack_overflow_error:
+	WSTR "Error: Stack Overflow"
+	WNL
+	ERROR

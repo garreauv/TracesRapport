@@ -1,0 +1,6 @@
+//Description:
+//writing of floats 
+{
+    float x = 3.2;
+    print(x);
+}

@@ -1,0 +1,10 @@
+// Test boolean simple assignation
+
+// Historique : cree le 11/01/2023
+
+{
+    boolean a;
+
+    a = true;
+    a = false;
+}

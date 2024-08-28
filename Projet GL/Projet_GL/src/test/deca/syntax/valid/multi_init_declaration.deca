@@ -1,0 +1,12 @@
+// Description:
+//    multi declaration and initialisation
+//
+// Resultats:
+//    bad_readInt_2.res
+//
+// Historique:
+//    cree le 10/01/2023
+
+{
+    int a=1,b=5,c=6;
+}

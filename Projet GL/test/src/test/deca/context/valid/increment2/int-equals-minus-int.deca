@@ -1,0 +1,12 @@
+//Resulats : -4
+
+//Historique : cree le 09/01/2023
+
+{
+    int a,b;
+
+    a = 4;
+    b = -a;
+
+    println(b);
+}

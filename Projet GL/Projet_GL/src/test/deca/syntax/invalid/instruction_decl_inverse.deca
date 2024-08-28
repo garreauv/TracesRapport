@@ -1,0 +1,17 @@
+// Description:
+//    Programme testant une declaration apres une instrcution
+//
+// Resultats:
+//    no viable alternative at input 'b' 
+//
+// Historique:
+//    cree le 10/01/2023
+
+
+{
+    int a;
+
+    a = 1;
+
+    int b;
+}

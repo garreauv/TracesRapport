@@ -1,0 +1,14 @@
+//Rule : 3.39
+
+//Resultats : can't cast a boolean into a float
+
+// Historique : cree le 09/01/2023
+
+
+{
+    float a;
+    boolean b = true;
+
+    //Must be refused
+    a = (float) b;
+}

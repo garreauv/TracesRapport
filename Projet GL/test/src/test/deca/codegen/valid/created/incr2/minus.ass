@@ -1,0 +1,104 @@
+	ADDSP #6
+	TSTO #6
+	BOV stack_overflow_error
+; Code de la table des méthodes de Object
+	LOAD #null, R0
+	STORE R0, 1(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 2(GB)
+; Start main program
+; Variables declarations:
+	LOAD #2, R2
+	STORE R2, 3(GB)
+	LOAD #3, R2
+	STORE R2, 4(GB)
+	LOAD #0x1.99999ap1, R2
+	STORE R2, 5(GB)
+	LOAD #0x1.2cccccp2, R2
+	STORE R2, 6(GB)
+; Beginning of main instructions:
+	LOAD 3(GB), R2
+	LOAD 4(GB), R3
+	SUB R3, R2
+	LOAD R2, R1
+	WINT
+	WSTR " "
+	LOAD 4(GB), R2
+	FLOAT R2, R2
+	LOAD 5(GB), R3
+	SUB R3, R2
+	BOV overflow_error
+	LOAD R2, R1
+	WFLOAT
+	WSTR " "
+	LOAD 6(GB), R2
+	LOAD 3(GB), R3
+	FLOAT R3, R3
+	SUB R3, R2
+	BOV overflow_error
+	LOAD R2, R1
+	WFLOAT
+	WSTR " "
+	LOAD 6(GB), R2
+	LOAD 5(GB), R3
+	SUB R3, R2
+	BOV overflow_error
+	LOAD R2, R1
+	WFLOAT
+	WSTR " "
+	LOAD 3(GB), R2
+	LOAD #1, R3
+	SUB R3, R2
+	LOAD R2, R1
+	WINT
+	WSTR " "
+	LOAD 5(GB), R2
+	LOAD #2, R3
+	FLOAT R3, R3
+	SUB R3, R2
+	BOV overflow_error
+	LOAD R2, R1
+	WFLOAT
+	WSTR " "
+	LOAD #2, R2
+	LOAD #0, R3
+	ADD R3, R2
+	OPP R2, R2
+	LOAD R2, R1
+	WINT
+	WSTR " "
+	LOAD #0x1.d9999ap1, R2
+	LOAD #0x0.0p0, R3
+	ADD R3, R2
+	OPP R2, R2
+	LOAD R2, R1
+	WFLOAT
+	WSTR " "
+	LOAD 3(GB), R2
+	LOAD #0, R3
+	ADD R3, R2
+	OPP R2, R2
+	LOAD R2, R1
+	WINT
+	WSTR " "
+	LOAD 6(GB), R2
+	LOAD #0x0.0p0, R3
+	ADD R3, R2
+	OPP R2, R2
+	LOAD R2, R1
+	WFLOAT
+	HALT
+; End main program
+code.Object.equals:
+	LOAD -2(LB), R0
+	CMP -3(LB), R0
+	SEQ R0
+	RTS
+overflow_error:
+	WSTR "Error: Overflow during arithmetic operation"
+	WNL
+	ERROR
+stack_overflow_error:
+	WSTR "Error: Stack Overflow"
+	WNL
+	ERROR

@@ -1,0 +1,14 @@
+//Rule 3.37
+//Raison : type_unary_op(minus, int) = int
+
+
+//Historique : cree le 09/01/2023
+
+
+{
+    int a = 2;
+    float b;
+
+    //Must be refused
+    b = -a;
+}

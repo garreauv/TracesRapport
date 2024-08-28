@@ -1,0 +1,42 @@
+// Description:
+//    Programme minimaliste testant if_else avec plusieurs condition
+//
+// Resultats:
+//    if_else.res
+//
+// Historique:
+//    cree le 09/01/2023
+
+{
+    int i;
+    if(true){
+        a = 1 +2;
+    }
+
+    if(i<1){
+        i = i-1;
+    }else{
+        i = 5;
+    }
+
+    if(i>2){
+        print("Ok");
+        i = i+1;
+    }else if(i<=1){
+        i = i-2;
+    }else if(i>=2){
+        print("Ok");
+        i = i+2;
+    }
+
+    if(i==2){
+        i = 3;
+    }else if(i>=2){
+        print("Ok");
+        i = i+2;
+    }else{
+        print("Ok");
+        i = 1;
+    }
+}
+

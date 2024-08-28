@@ -1,0 +1,20 @@
+// Test call a method of a super class
+
+// Historique : cree le 21/01/2023
+
+class A{
+    protected int x;
+
+    int getX(){
+        return this.x;
+    }
+}
+
+class B extends A{
+    protected int y;
+}
+
+{
+    B b = new B();
+    int a = b.getX();
+}

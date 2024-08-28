@@ -1,0 +1,11 @@
+//Résultats : 4
+
+//Hisotrique : cree le 09/01/2023
+
+{
+    int int = 3;
+
+    int = int + 1;
+
+    print(int);
+}

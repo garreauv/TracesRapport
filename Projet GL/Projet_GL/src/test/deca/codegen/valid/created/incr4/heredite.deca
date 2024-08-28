@@ -1,0 +1,47 @@
+//5 5 42 5 42 3.1415 1024
+class A{
+    protected int x = 5;
+    protected int a;
+
+    int getX(){
+        return this.x;
+    }
+}
+
+class B extends A{
+    protected int y = 42;
+
+    int getY(){
+        return this.y;
+    }
+}
+
+class C extends B{
+    protected float z = 3.1415;
+
+    float getZ(){
+        return this.z;
+    }
+}
+
+class D extends A{
+    int getX(){
+        return 1024;
+    }
+}
+
+{
+    A a = new A();
+    B b = new B();
+    C c = new C();
+    D d = new D();
+    print(a.getX()); print(" "); //5
+    print(b.getX()); print(" "); //5
+    print(b.getY()); print(" "); //42
+    print(c.getX()); print(" "); //5
+    print(c.getY()); print(" "); //42
+    print(c.getZ()); print(" "); //3.1415
+    print(d.getX()); //1024
+    
+
+}

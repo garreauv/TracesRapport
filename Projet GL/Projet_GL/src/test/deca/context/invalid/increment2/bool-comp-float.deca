@@ -1,0 +1,11 @@
+// Test bool == float
+
+// Historique : cree le 11/01/2023
+
+{
+    float a = 3;
+
+    boolean b = true;
+
+    b = b == a;
+}

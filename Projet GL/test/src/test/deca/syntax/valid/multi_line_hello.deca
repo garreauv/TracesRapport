@@ -1,0 +1,12 @@
+// Description:
+//    Programme minimaliste utilisant print pour un string multi_line.
+//
+// Resultats:
+//    multi_line_hello.res
+//
+// Historique:
+//    cree le 01/01/2023
+
+{
+        print("Hello\nWorld"); //Multi line non géré
+}

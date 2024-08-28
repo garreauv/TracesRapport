@@ -1,0 +1,13 @@
+// Test : type_arith_op(float, float) = float
+
+// Resultats : 5.7
+
+//Historique : cree le 09/01/2023
+
+{
+    float a,b,c;
+    a = 2.2;
+    b = 3.5;
+
+    c = a + b;
+}

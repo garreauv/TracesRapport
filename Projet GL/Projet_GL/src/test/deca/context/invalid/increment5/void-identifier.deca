@@ -1,0 +1,10 @@
+// Test rule 2.5 : void Identifier
+
+// Historique : cree le 17/01/2023
+
+class A{
+    int a;
+
+    // Must be refused
+    void b;
+}

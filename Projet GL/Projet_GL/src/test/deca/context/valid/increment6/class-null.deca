@@ -1,0 +1,17 @@
+// Comparaison class with null
+
+// Historique : cree le 20/01/2023
+
+class A{
+    int x;
+}
+
+{
+    A a = new A();
+    if(a == null){
+        print("a nul");
+    }
+    else{
+        print("a pas nul");
+    }
+}

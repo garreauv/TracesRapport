@@ -1,0 +1,6 @@
+//Description
+//Test of integers 
+{
+    int x = 3;
+    println(x);
+}

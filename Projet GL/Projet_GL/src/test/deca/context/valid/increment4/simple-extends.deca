@@ -1,0 +1,13 @@
+// Test simple extends
+
+// Hisotrique : cree le 17/01/2023
+
+class A{
+    int a;
+}
+
+class B extends A{
+    float b;
+}
+
+class C{}

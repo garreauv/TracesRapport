@@ -1,0 +1,9 @@
+// Test simple readFloat
+
+// Historique : cree le 11/01/2023
+
+{
+    float a;
+
+    a = readFloat();
+}

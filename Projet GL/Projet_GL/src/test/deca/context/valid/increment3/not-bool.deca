@@ -1,0 +1,14 @@
+//Resultats : 2
+
+{
+    boolean bool = true;
+    int a,b;
+    a = 2;
+    b = 3;
+    if(bool){
+        println(a);
+    }
+    if(!bool){
+        println(b);
+    }
+}

@@ -1,0 +1,10 @@
+//3.30000e+00 5.90000e+00 8.90000e+00
+
+{   
+    int a = 3;
+    float b = 2.9;
+    float c = b+a;
+    print(2.3 + 1); print(" ");
+    print(c); print(" ");
+    print(c + 3); 
+}

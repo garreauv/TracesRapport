@@ -1,0 +1,10 @@
+// Description:
+//    fichier inclus pas trouvé
+//
+// Resultats:
+//    fichier_inexistant: include file not found
+//
+// Historique:
+//    cree le 10/01/2023
+
+#include "fichier_inexistant"

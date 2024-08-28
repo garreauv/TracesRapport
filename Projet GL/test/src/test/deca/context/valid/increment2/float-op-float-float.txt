@@ -1,0 +1,49 @@
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:46) - verify program: start
+DEBUG fr.ensimag.deca.tree.Main.verifyMain(Main.java:30) - verify Main: start
+DEBUG fr.ensimag.deca.tree.Main.verifyMain(Main.java:34) - verify Main: end
+DEBUG fr.ensimag.deca.tree.Program.verifyProgram(Program.java:51) - verify program: end
+`> [7, 0] Program
+   +> ListDeclClass [List with 0 elements]
+   `> [7, 0] Main
+      +> ListDeclVar [List with 3 elements]
+      |  []> [8, 10] DeclVar
+      |  ||  +> [8, 4] Identifier (float)
+      |  ||  |  definition: type (builtin), type=float
+      |  ||  +> [8, 10] Identifier (a)
+      |  ||  |  definition: variable defined at [8, 10], type=float
+      |  ||  `> NoInitialization
+      |  []> [8, 12] DeclVar
+      |  ||  +> [8, 4] Identifier (float)
+      |  ||  |  definition: type (builtin), type=float
+      |  ||  +> [8, 12] Identifier (b)
+      |  ||  |  definition: variable defined at [8, 12], type=float
+      |  ||  `> NoInitialization
+      |  []> [8, 14] DeclVar
+      |      +> [8, 4] Identifier (float)
+      |      |  definition: type (builtin), type=float
+      |      +> [8, 14] Identifier (c)
+      |      |  definition: variable defined at [8, 14], type=float
+      |      `> NoInitialization
+      `> ListInst [List with 3 elements]
+         []> [9, 6] Assign
+         ||  type: float
+         ||  +> [9, 4] Identifier (a)
+         ||  |  definition: variable defined at [8, 10], type=float
+         ||  `> [9, 8] Float (2.2)
+         ||     type: float
+         []> [10, 6] Assign
+         ||  type: float
+         ||  +> [10, 4] Identifier (b)
+         ||  |  definition: variable defined at [8, 12], type=float
+         ||  `> [10, 8] Float (3.5)
+         ||     type: float
+         []> [12, 6] Assign
+             type: float
+             +> [12, 4] Identifier (c)
+             |  definition: variable defined at [8, 14], type=float
+             `> [12, 10] Plus
+                type: float
+                +> [12, 8] Identifier (a)
+                |  definition: variable defined at [8, 10], type=float
+                `> [12, 12] Identifier (b)
+                   definition: variable defined at [8, 12], type=float

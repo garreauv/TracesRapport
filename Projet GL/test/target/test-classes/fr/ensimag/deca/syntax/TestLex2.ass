@@ -1,0 +1,167 @@
+	ADDSP #11
+	TSTO #11
+	BOV stack_overflow_error
+; Code de la table des méthodes de Object
+	LOAD #null, R0
+	STORE R0, 1(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 2(GB)
+; Code de la table des méthodes de C
+	LEA 1(GB), R0
+	STORE R0, 3(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 4(GB)
+	LOAD code.C.diag, R0
+	STORE R0, 5(GB)
+	LOAD code.C.getX, R0
+	STORE R0, 6(GB)
+; Code de la table des méthodes de A
+	LEA 1(GB), R0
+	STORE R0, 7(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 8(GB)
+	LOAD code.A.getP, R0
+	STORE R0, 9(GB)
+	LOAD code.A.createC, R0
+	STORE R0, 10(GB)
+; Start main program
+; Variables declarations:
+	NEW #3, R2
+	LEA 7(GB), R0
+	STORE R0, 0(R2)
+	PUSH R2
+	BSR init.A
+	POP R2
+	STORE R2, 11(GB)
+; Beginning of main instructions:
+	BRA E_Cond.1
+E_Debut.1:
+	WSTR "false"
+	WNL
+E_Cond.1:
+	LOAD 11(GB), R2
+	LOAD R2, R1
+	LOAD 2(R1), R2
+	CMP #1, R2
+	BEQ E_Debut.1
+	HALT
+; End main program
+code.Object.equals:
+	LOAD -2(LB), R0
+	CMP -3(LB), R0
+	SEQ R0
+	RTS
+init.C:
+; Initialisation de C.x
+	LOAD #0, R0
+	LOAD -2(LB), R1
+	STORE R0, 1(R1)
+; Initialisation de C.y
+	LOAD #0, R0
+	LOAD -2(LB), R1
+	STORE R0, 2(R1)
+	TSTO #0
+; Initialisation explicite de C.x
+; Initialisation explicite de C.y
+	RTS
+init.A:
+; Initialisation de A.c
+	LOAD #null, R0
+	LOAD -2(LB), R1
+	STORE R0, 1(R1)
+; Initialisation de A.p
+	LOAD -2(LB), R1
+	STORE R0, 2(R1)
+	TSTO #0
+; Initialisation explicite de A.c
+	LOAD #null, R0
+	STORE R0, 1(R2)
+; Initialisation explicite de A.p
+	LOAD #1, R2
+	STORE R2, 2(R1)
+	RTS
+code.C.diag:
+; Sauvegarde des registres : 
+	TSTO #6
+	PUSH R6
+	PUSH R5
+	PUSH R4
+	PUSH R3
+	PUSH R2
+	LOAD -2(LB), R1
+	LOAD 1(R1), R2
+	LOAD #5, R3
+	LOAD #2, R4
+	LOAD #5, R5
+	LOAD #2, R6
+	ADD R6, R5
+	MUL R5, R4
+	ADD R4, R3
+	MUL R3, R2
+	LOAD -3(LB), R3
+	ADD R3, R2
+	LOAD -2(LB), R1
+	STORE R2, 1(R1)
+	LOAD -2(LB), R1
+	LOAD 2(R1), R2
+	LOAD -3(LB), R3
+	ADD R3, R2
+	LOAD -2(LB), R1
+	STORE R2, 2(R1)
+fin.C.diag:
+; Restauration des registres : 
+	POP R2
+	POP R3
+	POP R4
+	POP R5
+	POP R6
+	RTS
+code.C.getX:
+; Sauvegarde des registres : 
+	TSTO #0
+	LOAD -2(LB), R1
+	LOAD 1(R1), R2
+	LOAD R2, R0
+	BRA fin.C.getX
+fin.C.getX:
+; Restauration des registres : 
+	RTS
+code.A.getP:
+; Sauvegarde des registres : 
+	TSTO #0
+	LOAD -2(LB), R1
+	LOAD 2(R1), R2
+	LOAD R2, R0
+	BRA fin.A.getP
+fin.A.getP:
+; Restauration des registres : 
+	RTS
+code.A.createC:
+; Sauvegarde des registres : 
+	TSTO #3
+	PUSH R3
+	PUSH R2
+	NEW #3, R2
+	LEA 3(GB), R0
+	STORE R0, 0(R2)
+	PUSH R2
+	BSR init.C
+	POP R2
+	LOAD -2(LB), R1
+	STORE R2, 1(R1)
+	LOAD #null, R2
+	LOAD -2(LB), R1
+	STORE R2, 1(R1)
+	LOAD -2(LB), R1
+	LOAD 1(R1), R2
+	LOAD R2, R0
+	BRA fin.A.createC
+fin.A.createC:
+; Restauration des registres : 
+	POP R2
+	POP R3
+	RTS
+stack_overflow_error:
+	WSTR "Error: Stack Overflow"
+	WNL
+	ERROR

@@ -1,0 +1,46 @@
+//okokokokokok
+{
+    boolean a = true;
+    boolean b = false;
+    boolean c = !a;
+    boolean d = !b;
+    boolean e = !true;
+    boolean f = !false;
+
+    if(a){
+        print("ok");
+    }
+    if(b){
+        print("Erreur");
+    }
+    if(c){
+        print("Erreur");
+    }
+    if(d){
+        print("ok");
+    }
+    if(e){
+        print("Erreur");
+    }
+    if(f){
+        print("ok");
+    }
+    if(!(!true)){
+        print("ok");
+    }
+    if(!(!false)){
+        print("Erreur");
+    }
+    if(!a){
+        print("Erreur");
+    }
+    if(!b){
+        print("ok");
+    }
+    if(!!a){
+        println("ok");
+    }
+    if(!!b){
+        print("Erreur");
+    }
+}

@@ -1,0 +1,18 @@
+// Test simple elsif
+
+// Historique : cree le 11/01/2023
+
+{
+    int a = 3;
+    float b = 3.0;
+
+    if(a>b){
+        print("a est plus grand");
+    }
+    else if(a<b){
+        print("a est plus petit");
+    }
+    else if(a == b){
+        print("a et b sont egaux :)");
+    }
+}

@@ -1,0 +1,15 @@
+// Test method class A in method class B
+
+// Historique : cree le 20/01/2023
+
+class A{
+    void m1(){
+        m2();
+    }
+}
+
+class B{
+    void m2(){
+        m1();
+    }
+}

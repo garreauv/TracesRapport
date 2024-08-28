@@ -1,0 +1,14 @@
+// Description:
+//    while avec 2 identificateur sans virgule
+//
+// Resultats:
+//     no viable alternative at input 'b'
+//
+// Historique:
+//    cree le 10/01/2023
+
+{
+    while(a b){
+
+    }
+}

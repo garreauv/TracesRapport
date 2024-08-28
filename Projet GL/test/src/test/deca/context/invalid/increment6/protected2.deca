@@ -1,0 +1,22 @@
+// Test rule 3.66 condition 1
+
+// Historique : cree le 18/01/2023
+
+class A{
+    protected int x;
+}
+
+class B extends A{
+    int getX(A a){
+        //Must be refused
+        return a.x; // the type a (A) isn't a subtype of B
+    }
+}
+
+class X{
+    void m(){
+        A a = new A();
+        B b = new B();
+        println(b.getX(a));
+    }
+}

@@ -1,0 +1,43 @@
+	ADDSP #2
+	TSTO #2
+	BOV stack_overflow_error
+; Code de la table des méthodes de Object
+	LOAD #null, R0
+	STORE R0, 1(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 2(GB)
+; Start main program
+; Variables declarations:
+; Beginning of main instructions:
+	WSTR "Test println"
+	WNL
+	WSTR "Test print"
+	WNL
+	WSTR "2 + 3 = "
+	LOAD #2, R2
+	LOAD #3, R3
+	ADD R3, R2
+	LOAD R2, R1
+	WINT
+	WNL
+	WSTR "Voici un float "
+	WNL
+	LOAD #0x1.066666p2, R1
+	WFLOAT
+	WNL
+	WSTR "Voici sa valeur hexadecimale: "
+	WNL
+	LOAD #0x1.066666p2, R1
+	WFLOATX
+	WNL
+	HALT
+; End main program
+code.Object.equals:
+	LOAD -2(LB), R0
+	CMP -3(LB), R0
+	SEQ R0
+	RTS
+stack_overflow_error:
+	WSTR "Error: Stack Overflow"
+	WNL
+	ERROR

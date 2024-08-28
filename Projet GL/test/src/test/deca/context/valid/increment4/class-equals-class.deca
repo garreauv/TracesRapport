@@ -1,0 +1,16 @@
+// Test class A == class B
+
+// Historique : cree le 20/01/2023
+
+class A{}
+
+class B{}
+
+{
+    A a = new A();
+    B b = new B();
+    boolean c = a == null;
+    if(a == b){
+        print("ok");
+    }
+}

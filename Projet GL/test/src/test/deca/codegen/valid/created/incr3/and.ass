@@ -1,0 +1,138 @@
+	ADDSP #5
+	TSTO #5
+	BOV stack_overflow_error
+; Code de la table des méthodes de Object
+	LOAD #null, R0
+	STORE R0, 1(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 2(GB)
+; Start main program
+; Variables declarations:
+	LOAD #1, R2
+	STORE R2, 3(GB)
+	LOAD #0, R2
+	STORE R2, 4(GB)
+	LOAD 3(GB), R2
+	LOAD 4(GB), R3
+	MUL R3, R2
+	STORE R2, 5(GB)
+; Beginning of main instructions:
+	LOAD 5(GB), R2
+	CMP #0, R2
+	BEQ E_Sinon.11
+	WSTR "Erreur"
+	BRA E_Fin.1
+E_Sinon.11:
+E_Fin.1:
+	LOAD 3(GB), R2
+	CMP #0, R2
+	BEQ E_Sinon.22
+	LOAD 3(GB), R2
+	CMP #0, R2
+	BEQ E_Sinon.22
+	WSTR "o"
+	BRA E_Fin.2
+E_Sinon.22:
+E_Fin.2:
+	LOAD 3(GB), R2
+	CMP #0, R2
+	BEQ E_Sinon.33
+	LOAD #1, R2
+	CMP #1, R2
+	BNE E_Sinon.33
+	WSTR "k"
+	BRA E_Fin.3
+E_Sinon.33:
+E_Fin.3:
+	LOAD 4(GB), R2
+	CMP #0, R2
+	BEQ E_Sinon.44
+	LOAD 4(GB), R2
+	CMP #0, R2
+	BEQ E_Sinon.44
+	WSTR "Erreur"
+	BRA E_Fin.4
+E_Sinon.44:
+E_Fin.4:
+	LOAD #1, R2
+	CMP #1, R2
+	BNE E_Sinon.55
+	LOAD 4(GB), R3
+	CMP #0, R3
+	BEQ E_Sinon.55
+	WSTR "Erreur"
+	BRA E_Fin.5
+E_Sinon.55:
+E_Fin.5:
+	LOAD #0, R2
+	CMP #1, R2
+	BNE E_Sinon.66
+	LOAD 4(GB), R3
+	CMP #0, R3
+	BEQ E_Sinon.66
+	WSTR "Erreur"
+	BRA E_Fin.6
+E_Sinon.66:
+E_Fin.6:
+	LOAD #0, R2
+	CMP #1, R2
+	BNE E_Sinon.77
+	LOAD 3(GB), R3
+	CMP #0, R3
+	BEQ E_Sinon.77
+	WSTR "Erreur"
+	BRA E_Fin.7
+E_Sinon.77:
+E_Fin.7:
+	LOAD #1, R2
+	CMP #1, R2
+	BNE E_Sinon.88
+	LOAD #1, R3
+	CMP #1, R3
+	BNE E_Sinon.88
+	WSTR "ok"
+	WNL
+	BRA E_Fin.8
+E_Sinon.88:
+E_Fin.8:
+	LOAD #0, R2
+	CMP #1, R2
+	BNE E_Sinon.99
+	LOAD #1, R3
+	CMP #1, R3
+	BNE E_Sinon.99
+	WSTR "Erreur"
+	BRA E_Fin.9
+E_Sinon.99:
+E_Fin.9:
+	LOAD #1, R2
+	CMP #1, R2
+	BNE E_Sinon.1010
+	LOAD #0, R3
+	CMP #1, R3
+	BNE E_Sinon.1010
+	WSTR "Erreur"
+	BRA E_Fin.10
+E_Sinon.1010:
+E_Fin.10:
+	LOAD #0, R2
+	CMP #1, R2
+	BNE E_Sinon.1111
+	LOAD #0, R3
+	CMP #1, R3
+	BNE E_Sinon.1111
+	WSTR "Erreur"
+	BRA E_Fin.11
+E_Sinon.1111:
+E_Fin.11:
+	HALT
+; End main program
+code.Object.equals:
+	LOAD -2(LB), R0
+	CMP -3(LB), R0
+	SEQ R0
+	RTS
+stack_overflow_error:
+	WSTR "Error: Stack Overflow"
+	WNL
+	ERROR

@@ -1,0 +1,28 @@
+//More complex test method in method
+
+// Historique : cree le 18/01/2023
+
+class A{
+    B b;
+}
+
+class B{
+    A a;
+}
+
+class ParcoursA{
+    void parcoursA(A a){
+        if(a != null){
+            //Must be refused
+            parcoursB(a.b);
+        }
+    }
+}
+
+class ParcoursB{
+    void parcoursB(B b){
+        if(b != null){
+            parcoursA(b.a);
+        }
+    }
+}

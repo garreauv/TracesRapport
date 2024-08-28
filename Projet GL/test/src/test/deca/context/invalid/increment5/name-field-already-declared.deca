@@ -1,0 +1,12 @@
+// Rule 2.4 Test 2 attributs with the same name
+
+// Historique : cree le 17/01/2023
+
+class A{
+    int a;
+
+    //Must be refused
+    float a;
+
+    void g(){}
+}

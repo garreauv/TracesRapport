@@ -1,0 +1,16 @@
+// Description:
+//    semi sans instruction
+//
+// Resultats:
+//    signle_semi.res
+//
+// Historique:
+//    cree le 10/01/2023
+
+{
+    print("Hello World");
+
+    ;
+
+    print("Hello World");
+}

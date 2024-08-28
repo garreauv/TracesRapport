@@ -1,0 +1,199 @@
+; start main program
+; Variables declarations:
+	LOAD #0, R2
+	STORE R2, 1(GB)
+	LOAD #20, R2
+	STORE R2, 2(GB)
+	LOAD #0, R2
+	STORE R2, 3(GB)
+	LOAD #0, R2
+	STORE R2, 4(GB)
+	LOAD #0, R2
+	STORE R2, 5(GB)
+	LOAD #0, R2
+	STORE R2, 6(GB)
+; Beginning of main instructions:
+	WSTR "Bonjour et bienvenue au Juste Prix!"
+	WNL
+	WSTR "Voulez vous jouer seul ou à plusieurs (une personne rentre le prix, l'autre le devine) ?"
+	WNL
+	WSTR "Tapez 0 pour jouer seul, tapez 1 pour jouer à plusieurs"
+	WNL
+	LOAD 4(GB), R2
+	RINT
+	BOV io_error
+	LOAD R1, R2
+	STORE R2, 4(GB)
+	LOAD 4(GB), R2
+	LOAD #0, R3
+	CMP R3, R2
+	BNE E_Sinon.11
+	WSTR "Vous avez décidé de jouer seul, devinez le prix (entier) d'une renault Zoé et "
+	WNL
+	LOAD 1(GB), R2
+	LOAD #1800, R2
+	STORE R2, 1(GB)
+E_Debut.2:
+	LOAD 6(GB), R2
+	RINT
+	BOV io_error
+	LOAD R1, R2
+	STORE R2, 6(GB)
+	LOAD 6(GB), R2
+	LOAD 1(GB), R3
+	CMP R3, R2
+	BNE E_Sinon.32
+	WSTR "ET C'EST GAGNÉ!!!"
+	WNL
+	LOAD 3(GB), R2
+	LOAD #1, R2
+	STORE R2, 3(GB)
+	BRA E_Fin.3
+E_Sinon.32:
+	LOAD 6(GB), R2
+	LOAD 1(GB), R3
+	CMP R3, R2
+	BGE E_Sinon.43
+	WSTR "C'est plus"
+	WNL
+	BRA E_Fin.4
+E_Sinon.43:
+	LOAD 6(GB), R2
+	LOAD 1(GB), R3
+	CMP R3, R2
+	BLE E_Sinon.54
+	WSTR "C'est moins"
+	WNL
+	BRA E_Fin.5
+E_Sinon.54:
+E_Fin.5:
+E_Fin.4:
+E_Fin.3:
+	LOAD 2(GB), R2
+	LOAD #1, R3
+	CMP R3, R2
+	BLE E_Sinon.65
+	LOAD 2(GB), R2
+	LOAD 2(GB), R2
+	LOAD #1, R3
+	SUB R3, R2
+	STORE R2, 2(GB)
+	WSTR "Essais restant : "
+	LOAD 2(GB), R1
+	WINT
+	WNL
+	WSTR "Rentrez un nouveau prix"
+	WNL
+	BRA E_Fin.6
+E_Sinon.65:
+	WSTR "C'est perdu, dommage!"
+	WNL
+	LOAD 3(GB), R2
+	LOAD #1, R2
+	STORE R2, 3(GB)
+E_Fin.6:
+E_Cond.2:
+	LOAD 3(GB), R2
+	CMP #0, R2
+	BEQ E_Debut.2
+	BRA E_Fin.1
+E_Sinon.11:
+	LOAD 4(GB), R2
+	LOAD #1, R3
+	CMP R3, R2
+	BNE E_Sinon.76
+	WSTR "Vous avez décidé de jouer à deux, rentrez donc un prix (entier) :"
+	WNL
+	LOAD 1(GB), R2
+	RINT
+	BOV io_error
+	LOAD R1, R2
+	STORE R2, 1(GB)
+	WSTR "A vous de devinez le prix (entier) qu'a rentré votre ami"
+	WNL
+E_Debut.8:
+	LOAD 6(GB), R2
+	RINT
+	BOV io_error
+	LOAD R1, R2
+	STORE R2, 6(GB)
+	LOAD 6(GB), R2
+	LOAD 1(GB), R3
+	CMP R3, R2
+	BNE E_Sinon.97
+	WSTR "ET C'EST GAGNÉ!!!"
+	WNL
+	LOAD 3(GB), R2
+	LOAD #1, R2
+	STORE R2, 3(GB)
+	BRA E_Fin.9
+E_Sinon.97:
+	LOAD 6(GB), R2
+	LOAD 1(GB), R3
+	CMP R3, R2
+	BGE E_Sinon.108
+	WSTR "C'est plus"
+	WNL
+	BRA E_Fin.10
+E_Sinon.108:
+	LOAD 6(GB), R2
+	LOAD 1(GB), R3
+	CMP R3, R2
+	BLE E_Sinon.119
+	WSTR "C'est moins"
+	WNL
+	BRA E_Fin.11
+E_Sinon.119:
+E_Fin.11:
+E_Fin.10:
+E_Fin.9:
+	LOAD 2(GB), R2
+	LOAD #0, R3
+	CMP R3, R2
+	BLE E_Sinon.1210
+	LOAD 2(GB), R2
+	LOAD 2(GB), R2
+	LOAD #1, R3
+	SUB R3, R2
+	STORE R2, 2(GB)
+	WSTR "Essais restant : "
+	LOAD 2(GB), R1
+	WINT
+	WNL
+	WSTR "Rentrez un nouveau prix"
+	WNL
+	BRA E_Fin.12
+E_Sinon.1210:
+	WSTR "C'est perdu, dommage!"
+	WNL
+	LOAD 3(GB), R2
+	LOAD #1, R2
+	STORE R2, 3(GB)
+E_Fin.12:
+E_Cond.8:
+	LOAD 3(GB), R2
+	CMP #0, R2
+	BEQ E_Debut.8
+	BRA E_Fin.7
+E_Sinon.76:
+	LOAD 4(GB), R2
+	LOAD #0, R3
+	CMP R3, R2
+	BEQ E_Sinon.1311
+	LOAD 4(GB), R3
+	LOAD #1, R4
+	CMP R4, R3
+	BEQ E_Sinon.1311
+	WSTR "Ahah un petit malin qui s'amuse à rentrer ni 0 ni 1, je vous laisse relancer le programme pour la peine"
+	WNL
+	BRA E_Fin.13
+E_Sinon.1311:
+E_Fin.13:
+E_Fin.7:
+E_Fin.1:
+	HALT
+io_error:
+	WSTR "Error: Input/Output Error"
+	WNL
+	ERROR
+; end main program

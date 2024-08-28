@@ -1,0 +1,39 @@
+//okokokokokokokok
+{
+    boolean a = true;
+    boolean b = false;
+    boolean c = a || b;
+    if(c){
+        print("ok");
+    }
+    if(a || a){
+        print("ok");
+    }
+    if(a || true){
+        print("ok");
+    }
+    if(b || b){
+        print("Erreur");
+    }
+    if(true || b){
+        print("ok");
+    }
+    if(false || b){
+        print("Erreur");
+    }
+    if(false || a){
+        print("ok");
+    }
+    if(true || true){
+        print("ok");
+    } 
+    if(false || true){
+        print("ok");
+    }
+    if(true || false){
+        println("ok");
+    }
+    if(false || false){
+        print("Erreur");
+    }
+}

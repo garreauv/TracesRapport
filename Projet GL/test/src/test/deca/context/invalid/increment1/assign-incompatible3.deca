@@ -1,0 +1,18 @@
+// Test : bool := float
+
+//test rule (3.28)
+
+// Raison : Typage incompatibles
+
+// Résultats : Ligne 14 "types incompatibles"
+
+// Historique :
+//  cree le 11/01/2023
+
+{
+    float a;
+    boolean b;
+
+    //Must be refused
+    b = a;
+}

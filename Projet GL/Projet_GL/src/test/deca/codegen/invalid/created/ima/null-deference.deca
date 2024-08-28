@@ -1,0 +1,11 @@
+class A{
+    protected int x;
+    int getX(){
+        return this.x;
+    }
+}
+
+{
+    A a;
+    a.getX();
+}

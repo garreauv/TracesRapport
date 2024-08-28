@@ -1,0 +1,24 @@
+//okok
+
+// Test int init 0 bool false and float 0.0
+
+// Historique : cree le 21/01/2023
+
+class A{
+    int x;
+    float y;
+    boolean b;
+}
+
+{
+    A a = new A();
+    if(a.x == 0){
+        print("ok");
+    }
+    if(a.y == 0.0){
+        print("ok");
+    }
+    if(a.b){
+        print("error");
+    }
+}

@@ -1,0 +1,11 @@
+// Test rule 3.24 return void
+
+// Historique : cree le 17/01/2023
+
+class A{
+    protected int a;
+
+    public void err(){
+        return print("It doesn't work");
+    }
+}

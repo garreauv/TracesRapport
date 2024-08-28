@@ -1,0 +1,8 @@
+{
+    println("Test println");
+    print("Test print");
+    println();
+    print("2 + 3 = "); println(2+3);
+    println("Voici un float "); println(4.1);
+    println("Voici sa valeur hexadecimale: "); printlnx(4.1);
+}

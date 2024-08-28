@@ -1,0 +1,22 @@
+// test super
+
+// Historique : cree le 20/01/2023
+
+class A{
+    protected int x;
+    protected boolean b;
+
+    void set(int x, boolean b){
+        this.x = x;
+        this.b = b;
+    }
+}
+
+class B{
+    protected int a;
+
+    void set(int x, boolean b){
+        super(x,b);
+        this.a = 1;
+    }
+}

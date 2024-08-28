@@ -1,0 +1,10 @@
+// Test if void
+
+// Historique : cree le 23/01/2023
+
+{
+    //Must be refused
+    if(){
+        print("error");
+    }
+}

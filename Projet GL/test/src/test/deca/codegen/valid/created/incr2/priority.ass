@@ -1,0 +1,75 @@
+	ADDSP #2
+	TSTO #2
+	BOV stack_overflow_error
+; Code de la table des méthodes de Object
+	LOAD #null, R0
+	STORE R0, 1(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 2(GB)
+; Start main program
+; Variables declarations:
+; Beginning of main instructions:
+	LOAD #2, R2
+	LOAD #3, R3
+	LOAD #4, R4
+	MUL R4, R3
+	ADD R3, R2
+	LOAD #1, R3
+	ADD R3, R2
+	LOAD R2, R1
+	WINT
+	WSTR " "
+	LOAD #2, R2
+	LOAD #3, R3
+	ADD R3, R2
+	LOAD #4, R3
+	MUL R3, R2
+	LOAD #1, R3
+	ADD R3, R2
+	LOAD R2, R1
+	WINT
+	WSTR " "
+	LOAD #3, R2
+	LOAD #1, R3
+	MUL R3, R2
+	LOAD #3, R3
+	CMP #0, R3
+	BEQ division_by_zero_error
+	REM R3, R2
+	LOAD R2, R1
+	WINT
+	WSTR " "
+	LOAD #3, R2
+	LOAD #4, R3
+	MUL R3, R2
+	LOAD #2, R3
+	LOAD #5, R4
+	MUL R4, R3
+	ADD R3, R2
+	LOAD R2, R1
+	WINT
+	WSTR " "
+	LOAD #3, R2
+	LOAD #2, R3
+	LOAD #2, R4
+	CMP #0, R4
+	BEQ division_by_zero_error
+	QUO R4, R3
+	ADD R3, R2
+	LOAD R2, R1
+	WINT
+	HALT
+; End main program
+code.Object.equals:
+	LOAD -2(LB), R0
+	CMP -3(LB), R0
+	SEQ R0
+	RTS
+division_by_zero_error:
+	WSTR "Error: Division by Zero"
+	WNL
+	ERROR
+stack_overflow_error:
+	WSTR "Error: Stack Overflow"
+	WNL
+	ERROR

@@ -1,0 +1,3 @@
+// Test class extends Object
+
+class A extends Object{}

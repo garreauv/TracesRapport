@@ -1,0 +1,12 @@
+// Test bool := float R float
+
+// Historique : cree le 11/01/2023
+
+{
+    boolean a = 3.1 > 3.101;
+    boolean b = 3.23 >= 3.230;
+    boolean c = 3.1 < 4.2;
+    boolean d = 2.0 <= 1.9;
+    boolean e = 3.2 == 4.2;
+    boolean f = 9.1 != 3.0;
+}

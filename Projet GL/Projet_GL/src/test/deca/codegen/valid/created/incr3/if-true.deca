@@ -1,0 +1,9 @@
+//ok
+{
+    if(true){
+        print("o");
+    }
+    if(!false){
+        println("k");
+    }
+}

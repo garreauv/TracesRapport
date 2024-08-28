@@ -1,0 +1,13 @@
+// Rule 2.3 : A method name redeclared a field name
+
+// Historique : cree le 17/01/2023
+
+class A{
+    protected int a;
+    protected float b;
+
+    // Must be refused
+    int a(){
+        this.a = 3
+    }
+}

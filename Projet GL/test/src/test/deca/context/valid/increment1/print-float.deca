@@ -1,0 +1,9 @@
+// Résultats : 2.7
+
+// Historique :
+//  cree le 09/01/2023
+
+{
+    float a = 2.7;
+    println(a);
+}

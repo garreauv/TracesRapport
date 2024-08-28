@@ -1,0 +1,18 @@
+// Test a good implementation of a get in a class
+
+class A{
+    protected int x = 3;
+
+    int getX(){
+        return this.x;
+    }
+}
+
+class B{
+    protected int y;
+    A a = new A();
+
+    void setY(){
+        this.y = a.getX();
+    }
+}

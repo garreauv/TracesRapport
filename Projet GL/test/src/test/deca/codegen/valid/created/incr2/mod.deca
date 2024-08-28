@@ -1,0 +1,9 @@
+//1 2 2 0
+
+{
+    int a = 5, b = 12;
+    print(4%3); print(" ");
+    print(b%a); print(" ");
+    print(7%a); print(" ");
+    print(b%12);
+}

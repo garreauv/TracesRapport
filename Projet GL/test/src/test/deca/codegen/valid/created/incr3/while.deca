@@ -1,0 +1,24 @@
+//4 3.36000e+01 2
+{
+    float a = 2.1;
+    int b = 9;
+    int c = 0, d= 0;
+    boolean e = false;
+    boolean f = false;
+
+    while(b != 0){ // b vaut 9 puis 4 puis 2 puis 1 puis 0
+        c = c + 1;
+        a = a * 2;
+        b = b/2;
+    }
+    print(c); print(" ");// c vaut donc 4
+    print(a); print(" ");
+
+    while(!e){
+        d = d+1;
+        e = e || f;
+        f = f || true;
+    }
+    print(d); //vaut 2
+
+}

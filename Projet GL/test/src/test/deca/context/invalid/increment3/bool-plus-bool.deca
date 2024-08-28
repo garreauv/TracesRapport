@@ -1,0 +1,11 @@
+// Test bool + bool
+
+// Historique : cree le 20/01/2023
+
+{
+    boolean b = true + false;
+
+    if(b){
+        print("error");
+    }
+}

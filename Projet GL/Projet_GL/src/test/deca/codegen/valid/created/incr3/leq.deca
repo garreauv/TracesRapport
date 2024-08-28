@@ -1,0 +1,41 @@
+//okokokokokokokokokok
+{
+    int a = 2, b = 3;
+    float c = 2.0, d = 2.9;
+    if(a <= b){
+        print("ok");
+    }
+    if(a <= c){
+        print("ok");
+    }
+    if(b <= d){
+        print("Error");
+    }
+    if(c <= d){
+        print("ok");
+    }
+    if(2 <= a){
+        print("ok");
+    }
+    if(d <= 2.9){
+        print("ok");
+    }
+    if(2<=2){
+        print("ok");
+    }
+    if(3.0 <= 3.0){
+        print("ok");
+    }
+    if(2 <= 2.2){
+        print("ok");
+    }
+    if(5 <= 5.0){
+        print("ok");
+    }
+    if(13 <= 12){
+        print("Error");
+    }
+    if(a <= 3){
+        print("ok");
+    }
+} 

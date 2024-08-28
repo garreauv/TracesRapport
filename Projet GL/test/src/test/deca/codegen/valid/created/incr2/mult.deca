@@ -1,0 +1,15 @@
+//6.40000e+00 9.60000e+00 9.40000e+00 1.50400e+01 4 4.40000e+00 9.92000e+00 9.60000e+00
+
+{
+    int a = 2, b = 3;
+    float c = 3.2, d = 4.7;
+
+    print(a*c); print(" ");
+    print( b *c); print(" ");
+    print(d*a); print(" ");
+    print(d*c); print(" ");
+    print(2*a); print(" ");
+    print(a*2.2); print(" ");
+    print(c*3.1); print(" ");
+    print(3*c);
+}

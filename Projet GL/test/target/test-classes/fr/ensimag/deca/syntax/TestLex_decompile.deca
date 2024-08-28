@@ -1,0 +1,40 @@
+class A extends Object {
+	protected int x;
+	int getX(  ){
+	 }
+
+	void setX( int x ){
+	 }
+
+ }
+
+class B extends Object {
+	protected int x;
+	public A j=new A;
+	int getY(  ){
+	 }
+
+	void setX( int x ){
+	 }
+
+ }
+
+class C extends B {
+	protected int p;
+	void setX( int x ){
+	 }
+
+ }
+
+{
+	A a=new A;
+	C u=new C;
+	int m;
+	int c=2;
+	int b=25;
+	a.setX( 1 );
+	println( "a.getX() = ", a.getX(  ) );
+	u.getY(  );
+	u.setX( b );
+	(m = (b + c));
+}

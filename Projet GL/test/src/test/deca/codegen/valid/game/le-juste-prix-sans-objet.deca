@@ -1,0 +1,81 @@
+// Jeu du juste prix ()
+
+// Principe : devinez le juste prix :)
+
+{
+    int prix;
+    int try = 20;
+    boolean win = false;
+    int x,p,y;
+    println("Bonjour et bienvenue au Juste Prix!");
+    println("Voulez vous jouer seul ou à plusieurs (une personne rentre le prix, l'autre le devine) ?");
+    println("Tapez 0 pour jouer seul, tapez 1 pour jouer à plusieurs");
+    x = readInt();
+
+    // Le joueur joue seul
+    if(x == 0){
+        println("Vous avez décidé de jouer seul, devinez le prix (entier) d'une renault Zoé et ");
+        prix = 1800;
+        while(!win){
+            y = readInt();
+            if(y == prix){
+                println("ET C'EST GAGNÉ!!!");
+                win = true;
+            }
+            else if(y<prix){
+                println("C'est plus");
+            }
+            else if(y>prix){
+                println("C'est moins");
+            }
+
+            if(try>1){
+                try = try - 1;
+                print("Essais restant : ");
+                println(try);
+                println("Rentrez un nouveau prix");
+            }
+            else{
+                println("C'est perdu, dommage!");
+                win = true; // pas vraiment du coup mais c'est pour mettre fin au while 
+            }
+        }
+    }
+
+
+    // Deux joueurs jouent
+    else if(x == 1){
+        println("Vous avez décidé de jouer à deux, rentrez donc un prix (entier) :");
+        prix = readInt();
+        println("A vous de devinez le prix (entier) qu'a rentré votre ami");
+        while(!win){
+            y = readInt();
+            if(y == prix){
+                println("ET C'EST GAGNÉ!!!");
+                win = true;
+            }
+            else if(y<prix){
+                println("C'est plus");
+            }
+            else if(y>prix){
+                println("C'est moins");
+            }
+
+            if(try>0){
+                try = try - 1;
+                print("Essais restant : ");
+                println(try);
+                println("Rentrez un nouveau prix");
+            }
+            else{
+                println("C'est perdu, dommage!");
+                win = true; // pas vraiment du coup mais c'est pour mettre fin au while 
+            }
+        }
+    }
+
+
+    else if(x != 0 && x!= 1){
+        println("Ahah un petit malin qui s'amuse à rentrer ni 0 ni 1, je vous laisse relancer le programme pour la peine");
+    }
+}

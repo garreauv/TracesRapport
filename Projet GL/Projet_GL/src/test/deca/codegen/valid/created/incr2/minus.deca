@@ -1,0 +1,17 @@
+//-1 -2.00000e-01 2.70000e+00 1.50000e+00 1 1.20000e+00 -2 -3.70000e+00 -2 -4.70000e+00
+
+{
+    int a = 2, b = 3;
+    float c = 3.2, d = 4.7;
+
+    print(a -b); print(" ");
+    print( b -c);print(" ");
+    print(d-a); print(" ");
+    print(d-c); print(" ");
+    print(a-1); print(" ");
+    print(c-2); print(" ");
+    print(-2); print(" ");
+    print(-3.7); print(" ");
+    print(-a); print(" ");
+    print(-d);
+}

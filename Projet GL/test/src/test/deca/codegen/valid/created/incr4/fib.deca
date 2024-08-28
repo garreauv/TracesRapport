@@ -1,0 +1,23 @@
+//21
+
+class Fib{
+    protected int x = 1;
+    int y = 1;
+    int z,n = 0;
+
+    int fi(int n){
+        while(this.n < n){
+            this.z = this.x + this.y;
+            this.x = this.y;
+            this.y = this.z;
+            this.n = this.n + 1;
+            }
+    return this.x;
+    }
+}
+
+{
+    Fib f = new Fib();
+    int x = f.fi(7);
+    print(x);
+}

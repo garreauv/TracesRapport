@@ -1,0 +1,27 @@
+//21
+class Fibonacci{
+    protected int y=1;
+    protected int x=1;
+    protected int z;
+    protected int n;
+    int calc(int count){
+        this.n = 0;
+        while(this.n<count){
+            this.z=(this.x)+(this.y);
+            this.x=this.y;
+            this.y=this.z;
+            this.n=(this.n)+1;
+        }
+        return this.x;
+    }
+
+}
+
+
+{
+    Fibonacci f = new Fibonacci();
+    int x = f.calc(7);
+    // int x;
+    //  f.calc(8);
+    print(x);
+}

@@ -1,0 +1,22 @@
+//ok
+
+// Test which needs the three passes of part b
+
+// Historique : cree le 21/01/2023
+
+class Ok{
+    void o(){
+        print("o");
+        k();
+    }
+
+    void k(){
+        print("k");
+    }
+}
+
+{
+    Ok ok  = new Ok();
+    ok.o();
+    println();
+}

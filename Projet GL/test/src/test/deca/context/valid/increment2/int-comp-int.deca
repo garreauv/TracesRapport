@@ -1,0 +1,12 @@
+// Test bool := int R int
+
+// Historique : cree le 11/01/2023
+
+{
+    boolean a = 3 > 3;
+    boolean b = 3 >= 3;
+    boolean c = 3 < 4;
+    boolean d = 2 <= 1;
+    boolean e = 3 == 3;
+    boolean f = 2 != 4;
+}

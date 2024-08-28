@@ -1,0 +1,16 @@
+//test rule (3.17)
+
+// Raison : Condition 3.17
+
+// Résultats : Ligne 13 "a variable can't be a void"
+
+// Historique :
+//  cree le 05/01/2023
+
+{
+    int x;
+    //Must be refused
+    void y;
+
+    x = 3;
+}

@@ -1,0 +1,10 @@
+// Test bool ==
+
+// Historique : cree le 10/01/2023
+
+{
+    boolean a = 3 == 2;
+    boolean b = 2 == 2;
+    boolean c = 1 == 1.0;
+    boolean d = 3 == 3.1;
+}

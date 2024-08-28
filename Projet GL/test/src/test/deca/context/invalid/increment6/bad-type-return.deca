@@ -1,0 +1,13 @@
+// Test bad return type
+
+// Historique : cree le 21/01/2023
+
+class A{
+    protected int x;
+
+    boolean b(){
+
+        // Must be refused
+        return this.x;
+    }
+}

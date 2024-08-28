@@ -1,0 +1,9 @@
+// test bool sup bool
+
+// Historique : cree le 20/01/2023
+
+{
+    if (false > true){
+        print("error");
+    }
+}

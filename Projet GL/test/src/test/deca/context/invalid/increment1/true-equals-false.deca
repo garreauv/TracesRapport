@@ -1,0 +1,10 @@
+// Test 
+
+//Résulats : Ligne 9 false identificateur de constante
+
+//Historique : 09/01/2023
+
+{
+    //Must be refused
+    true = false;
+}

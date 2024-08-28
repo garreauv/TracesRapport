@@ -1,0 +1,16 @@
+; start main program
+; Start:
+; Main program
+; Variables declarations:
+; Beginning of main instructions:
+	LOAD #5, R1
+	WINT
+	WNL
+	LOAD #5, R2
+	LOAD #3, R3
+	ADD R3, R2
+	LOAD R2, R1
+	WINT
+	WNL
+	HALT
+; end main program

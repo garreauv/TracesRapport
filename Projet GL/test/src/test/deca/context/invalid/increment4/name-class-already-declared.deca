@@ -1,0 +1,8 @@
+// Test : rule 1.3 -> class name already declared
+
+// Historique : cree le 17/01/2023
+
+class A{}
+
+// Must be refused
+class A{}

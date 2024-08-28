@@ -1,0 +1,40 @@
+//okok
+
+// Test with a set which calls a get
+
+// Historique : cree le 21/01/2023
+
+class A{
+    protected int x = 7;
+
+    int getX(){
+        return x;
+    }
+}
+
+class B{
+    protected int y;
+    A a;
+
+    int getY(){
+        return y;
+    }
+
+    void setY(){
+        y = a.getX();
+    }
+}
+
+{
+    B b = new B();
+    b.setY();
+    if(b.getY() == 7){
+        print("ok");
+    }
+    if(b.a.getX() == b.getY()){
+        print("ok");
+    }
+    else{
+        print("error");
+    }
+}

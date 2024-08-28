@@ -1,0 +1,8 @@
+// Test : super class must be declared before class
+
+// Historique : cree le 17/01/2023
+
+// Must be refused
+class A extends B {}
+
+class B{}

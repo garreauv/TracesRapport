@@ -1,0 +1,21 @@
+// Test rule 2.7 redifiinition of a method with another signature
+
+// HIstorique : cree le 17/01/2023
+
+class A {
+    protected int a;
+
+    int meth(){
+        return 1;
+    }
+}
+
+class B extends A{
+    protected float b;
+
+    //Must be refused
+    int meth(int n){
+        return 1;
+    }
+}
+

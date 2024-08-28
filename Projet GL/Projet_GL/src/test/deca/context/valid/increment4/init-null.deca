@@ -1,0 +1,9 @@
+// Test A a = null
+
+// Historique : cree le 20/01/2023
+
+class A{}
+
+{
+    A a = null;
+}

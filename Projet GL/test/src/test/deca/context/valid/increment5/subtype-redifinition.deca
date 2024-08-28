@@ -1,0 +1,15 @@
+// Redifinition with a subtype
+
+// Historique : cree le 17/01/2023
+
+class A{
+    int big(){
+        return 1.0;
+    }
+}
+
+class B extends A{
+    float big(){ //float subtype of int
+        return 3;
+    }
+}

@@ -1,0 +1,17 @@
+// Description:
+//    Programme minimaliste utilisant println et des commentaires
+//
+// Resultats:
+//    com.res
+//
+// Historique:
+//    cree le 09/01/2023
+
+//commentaires
+{
+        //commentaires
+        println("Hello");
+        //commentaires
+}
+//commentaires
+

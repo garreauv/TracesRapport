@@ -1,0 +1,12 @@
+//Rule : 3.12
+
+// Raison : Ligne 11 the name x is already took
+
+// Historique : cree le 09/01/2023
+
+{
+    int x = 3;
+
+    //Must be refused;
+    float x = 5.2;
+}

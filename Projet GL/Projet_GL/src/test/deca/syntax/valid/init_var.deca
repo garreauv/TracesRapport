@@ -1,0 +1,16 @@
+// Description:
+//    Programme declarant chaque type de variable en les initialisant
+//
+// Resultats:
+//    init_var.res
+//
+// Historique:
+//    cree le 09/01/2023
+
+{
+        int a=1;
+        float b=1.1;
+        boolean c=false;
+        void d;
+}
+

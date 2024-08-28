@@ -1,0 +1,9 @@
+// Test simple readInt
+
+//Historique : cree le 11/01/2023
+
+{
+    int a;
+
+     a = readInt();
+}

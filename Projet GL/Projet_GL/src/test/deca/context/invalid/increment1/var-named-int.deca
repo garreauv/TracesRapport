@@ -1,0 +1,14 @@
+//Résultats : int identificateur de variable
+
+// Historique : cree le 09/01/2023
+
+{
+    int int = 3;
+
+    int = int + 1;
+
+    //Must be refused
+    int x;
+
+    x = 3;
+}

@@ -1,0 +1,77 @@
+V "GNAT Lib v2020"
+M P W=b
+A -gnatf
+A -gnatyM115
+A -gnatwl
+A -g
+A -gnato
+A -fstack-check=specific
+A -g
+A -fstack-check=specific
+P ZX
+
+RN
+RV NO_FLOATING_POINT
+RV NO_IO
+
+U test_arrondis%b	test_arrondis.adb	a3440457 NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W arrondis%s		arrondis.adb		arrondis.ali
+Z system.assertions%s	s-assert.adb		s-assert.ali
+Z system.img_real%s	s-imgrea.adb		s-imgrea.ali
+W types_base%s		types_base.adb		types_base.ali
+
+D ada.ads		20200819050642 76789da1 ada%s
+D a-except.ads		20200819050642 a7106115 ada.exceptions%s
+D a-ioexce.ads		20200819050642 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20200819050642 119b8fb3 ada.streams%s
+D a-tags.ads		20200819050643 edddc8f0 ada.tags%s
+D a-textio.ads		20200819050643 aef4d56d ada.text_io%s
+D a-unccon.ads		20200819050643 0e9b276f ada.unchecked_conversion%s
+D arrondis.ads		20221217092829 746a376a arrondis%s
+D interfac.ads		20200819050644 5ab55268 interfaces%s
+D i-cstrea.ads		20200819050644 e53d8b8e interfaces.c_streams%s
+D system.ads		20200819050647 085b6ffb system%s
+D s-assert.ads		20200819050645 cd8d2c94 system.assertions%s
+D s-crtl.ads		20200819050645 0ebbdb71 system.crtl%s
+D s-exctab.ads		20200819050645 54135002 system.exception_table%s
+D s-ficobl.ads		20200819050645 078245e4 system.file_control_block%s
+D s-imgrea.ads		20200819050645 9f9b9792 system.img_real%s
+D s-parame.ads		20200819050646 4752c4cb system.parameters%s
+D s-secsta.ads		20200819050646 9b3ab94b system.secondary_stack%s
+D s-soflin.ads		20200819050646 a7318a92 system.soft_links%s
+D s-stache.ads		20200819050646 a37c21ec system.stack_checking%s
+D s-stalib.ads		20200819050646 6b7a13f2 system.standard_library%s
+D s-stoele.ads		20200819050646 2dc34a04 system.storage_elements%s
+D s-traent.ads		20200819050646 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20200819050646 5ecf7212 system.unsigned_types%s
+D s-wchcon.ads		20200819050646 1b7d22d2 system.wch_con%s
+D test_arrondis.adb	20221217092829 c25c09cc test_arrondis%b
+D types_base.ads	20221217092829 bb86ef9c types_base%s
+G a e
+G c Z b b [test_arrondis standard 8 11 none]
+G r c none [test_arrondis standard 8 11 none] [positionner_arrondi_flottant arrondis 3 14 none]
+X 1 ada.ads
+16K9*Ada 20e8 26|4r6 5r6
+X 6 a-textio.ads
+57K13*Text_IO 727e16 26|4w10 5r10
+508U14*Put_Line 26|27s4 34s4 41s4 48s4 53s4
+X 8 arrondis.ads
+1K9*Arrondis 5e13 26|4w19 5r19
+2n26*FE_TONEAREST{2E9} 26|26r33
+2n40*FE_UPWARD{2E9} 26|40r33
+2n51*FE_DOWNWARD{2E9} 26|33r33
+2n64*FE_TOWARDZERO{2E9} 26|47r33
+3U14*Positionner_Arrondi_Flottant 26|26s4 33s4 40s4 47s4
+X 26 test_arrondis.adb
+8U11*Test_Arrondis 8b11 54t4
+9V13 Computation{27|41F9} 9b13 16t7 27s27 28s18 34s27 35s18 41s27 42s18 48s27
+. 49s18
+10f7 X{27|41F9} 12m7 13m7 13r12 14m7 14r12 15r14
+17V13 Computation_Neg{27|41F9} 17b13 24t7 30s18 37s18 44s18 51s18
+18f7 X{27|41F9} 20m7 21m7 21r12 22m7 22r12 23r14
+X 27 types_base.ads
+17K9*Types_Base 26|4w29 5r29 27|65e15
+41F9*Flot_MA<short_float> 26|9r32 10r11 17r36 18r11 27r13 34r13 41r13 48r13
+

@@ -1,0 +1,91 @@
+	ADDSP #8
+	TSTO #8
+	BOV stack_overflow_error
+; Code de la table des méthodes de Object
+	LOAD #null, R0
+	STORE R0, 1(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 2(GB)
+; Start main program
+; Variables declarations:
+	LOAD #0x1.0cccccp1, R2
+	STORE R2, 3(GB)
+	LOAD #9, R2
+	STORE R2, 4(GB)
+	LOAD #0, R2
+	STORE R2, 5(GB)
+	LOAD #0, R2
+	STORE R2, 6(GB)
+	LOAD #0, R2
+	STORE R2, 7(GB)
+	LOAD #0, R2
+	STORE R2, 8(GB)
+; Beginning of main instructions:
+	BRA E_Cond.1
+E_Debut.1:
+	LOAD 5(GB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 5(GB)
+	LOAD 3(GB), R2
+	LOAD #2, R3
+	FLOAT R3, R3
+	MUL R3, R2
+	BOV overflow_error
+	STORE R2, 3(GB)
+	LOAD 4(GB), R2
+	LOAD #2, R3
+	CMP #0, R3
+	BEQ division_by_zero_error
+	QUO R3, R2
+	STORE R2, 4(GB)
+E_Cond.1:
+	LOAD 4(GB), R2
+	LOAD #0, R3
+	CMP R3, R2
+	BNE E_Debut.1
+	LOAD 5(GB), R1
+	WINT
+	WSTR " "
+	LOAD 3(GB), R1
+	WFLOAT
+	WSTR " "
+	BRA E_Cond.2
+E_Debut.2:
+	LOAD 6(GB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 6(GB)
+	LOAD 7(GB), R2
+	LOAD 8(GB), R3
+	ADD R3, R2
+	STORE R2, 7(GB)
+	LOAD 8(GB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 8(GB)
+E_Cond.2:
+	LOAD 7(GB), R2
+	CMP #0, R2
+	BEQ E_Debut.2
+	LOAD 6(GB), R1
+	WINT
+	HALT
+; End main program
+code.Object.equals:
+	LOAD -2(LB), R0
+	CMP -3(LB), R0
+	SEQ R0
+	RTS
+division_by_zero_error:
+	WSTR "Error: Division by Zero"
+	WNL
+	ERROR
+overflow_error:
+	WSTR "Error: Overflow during arithmetic operation"
+	WNL
+	ERROR
+stack_overflow_error:
+	WSTR "Error: Stack Overflow"
+	WNL
+	ERROR

@@ -1,0 +1,41 @@
+// Test good redifinition
+
+// Historique : cree le 17/01/2023
+
+class A{
+    protected int a;
+
+    void hello(){
+        print("Hello");
+    }
+
+    int oui(){
+        return 1;
+    }
+
+    float ok(){
+        return 3.2;
+    }
+
+    boolean b(){
+        return true;
+    }
+}
+
+class B extends A{
+    void hello(){
+        print("idk why you say goobye i say hello");
+    }
+
+    int oui(){
+        return 2;
+    }
+
+    float ok(){
+        return 1.2;
+    }
+
+    boolean b(){
+        return false;
+    }
+}

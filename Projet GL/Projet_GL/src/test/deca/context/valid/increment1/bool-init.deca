@@ -1,0 +1,8 @@
+// Test bool := true et bool := false
+
+// Historique : cree le 10/01/2023
+
+{
+    boolean b = true;
+    boolean c = false;
+}

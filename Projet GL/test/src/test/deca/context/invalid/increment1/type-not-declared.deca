@@ -1,0 +1,15 @@
+//test rule (0.2)
+
+// Raison : Opération partielle
+
+// Résultats : Ligne 12 "type identifier not declared"
+
+// Historique :
+//  cree le 05/01/2023
+
+{
+    //Type not declared
+    double x;
+
+    x = 2.3;
+}

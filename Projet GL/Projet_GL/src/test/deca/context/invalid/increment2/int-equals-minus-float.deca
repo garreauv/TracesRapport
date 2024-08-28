@@ -1,0 +1,15 @@
+// Rule : 3.37
+//Raison : type_unary_op(minus, float) = float
+
+//Resultats : Ligne 14 erreur de typage
+
+//Historique : cree le 09/01/2023
+
+
+{
+    float a = 2.3;
+    int b;
+
+    //Must be refused
+    b = -a;
+}

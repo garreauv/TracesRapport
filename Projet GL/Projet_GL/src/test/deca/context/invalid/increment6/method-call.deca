@@ -1,0 +1,14 @@
+// Test rule 3.71 call method on an Identifier that isn't a class
+
+// Historique : cree le 18/01/2023
+
+class A{
+    int a;
+
+    void m(){}
+}
+
+{
+    int x;
+    x.m();
+}

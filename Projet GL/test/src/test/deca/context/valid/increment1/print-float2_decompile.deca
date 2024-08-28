@@ -1,0 +1,5 @@
+{
+	float a;
+	(a = 0x1.99999ap1);
+	println( a );
+}

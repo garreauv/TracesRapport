@@ -1,0 +1,12 @@
+// Test class with the same name attribut that is super class
+
+// Historique : cree le 17/01/2023
+
+class A{
+    int a;
+    protected boolean b;
+}
+
+class B extends A{
+    int a;
+}

@@ -1,0 +1,13 @@
+//should return arithmetic overflow error
+
+class A{
+    protected float x = 0x1.fffffep126;
+    int getX(){
+        return 100*this.x;
+    }
+}
+
+{
+    A a = new A();
+    a.getX();
+}

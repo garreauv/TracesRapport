@@ -1,0 +1,17 @@
+// Description:
+//    Programme contenant un caractere inatendu 
+//
+// Resultats:
+//    recognition error "²"
+//
+// Historique:
+//    cree le 10/01/2023
+
+
+{
+    print("Hello world");
+
+    ²
+    
+    print("Hello world);
+}

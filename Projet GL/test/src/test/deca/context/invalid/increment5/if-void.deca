@@ -1,0 +1,15 @@
+// test if void method
+
+// Historique : cree le 20/01/2023
+
+class A{
+    void m(){}
+}
+{
+    A a = new A();
+    
+    //Must be refused
+    if(a.m()){
+        print("error");
+    }
+}

@@ -1,0 +1,5 @@
+{
+    printx(3.234); print(" ");
+    printx(2.0); print(" ");
+    printx(2.5);
+}

@@ -1,0 +1,15 @@
+//test rule (3.33)
+
+// Raison : Typage incompatibles
+
+// Résultats : Ligne 14 "types incompatibles"
+
+// Historique :
+//  cree le 08/01/2023
+
+{
+    boolean a,b,c;
+
+    //Must be refused
+    a = b + c;
+}

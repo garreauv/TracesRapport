@@ -1,0 +1,32 @@
+//ok
+
+// Test class == class with same and different values
+
+// Historique : cree le 21/01/2023
+
+class A{
+    protected int x = 2;
+
+    void setX(int x){
+        this.x = x;
+    }
+}
+
+{
+    A a1 = new A();
+    A a2 = new A();
+
+    a1.setX(3);
+    if(a1 == a2){
+        print("error");
+    }
+    else{
+        a2.setX(3);
+        if(a1 == a2){
+            print("ok");
+        }
+        else{
+            print("error");
+        }
+    }
+}

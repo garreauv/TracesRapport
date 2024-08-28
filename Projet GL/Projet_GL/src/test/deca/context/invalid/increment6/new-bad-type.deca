@@ -1,0 +1,10 @@
+// Test rule 3.42 New int
+
+class A{
+    int a;
+}
+
+{
+    int b;
+    int c = New int;
+}

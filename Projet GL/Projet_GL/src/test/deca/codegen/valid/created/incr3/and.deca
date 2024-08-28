@@ -1,0 +1,39 @@
+//okok
+{
+    boolean a = true;
+    boolean b = false;
+    boolean c = a && b;
+    if(c){
+        print("Erreur");
+    }
+    if(a && a){
+        print("o");
+    }
+    if(a && true){
+        print("k");
+    }
+    if(b && b){
+        print("Erreur");
+    }
+    if(true && b){
+        print("Erreur");
+    }
+    if(false && b){
+        print("Erreur");
+    }
+    if(false && a){
+        print("Erreur");
+    }
+    if(true && true){
+        println("ok");
+    } 
+    if(false && true){
+        print("Erreur");
+    }
+    if(true && false){
+        print("Erreur");
+    }
+    if(false && false){
+        print("Erreur");
+    }
+}

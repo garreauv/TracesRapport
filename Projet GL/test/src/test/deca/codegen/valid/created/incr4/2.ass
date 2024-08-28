@@ -1,0 +1,133 @@
+	ADDSP #7
+	TSTO #8
+	BOV stack_overflow_error
+; Code de la table des méthodes de Object
+	LOAD #null, R0
+	STORE R0, 1(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 2(GB)
+; Code de la table des méthodes de Sum
+	LEA 1(GB), R0
+	STORE R0, 3(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 4(GB)
+	LOAD code.Sum.s, R0
+	STORE R0, 5(GB)
+; Start main program
+; Variables declarations:
+	NEW #4, R2
+	LEA 3(GB), R0
+	STORE R0, 0(R2)
+	PUSH R2
+	BSR init.Sum
+	POP R2
+	STORE R2, 6(GB)
+; Appel de méthode :
+	ADDSP #2
+	LOAD 6(GB), R2
+	STORE R2, 0(SP)
+	LOAD #50, R2
+	STORE R2, -1(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ NullDeferenceError
+	LOAD 0(R2), R2
+	BSR 2(R2)
+	SUBSP #1
+	LOAD R0, R2
+	STORE R2, 8(GB)
+; Beginning of main instructions:
+	LOAD 8(GB), R1
+	WFLOAT
+	HALT
+; End main program
+code.Object.equals:
+	LOAD -2(LB), R0
+	CMP -3(LB), R0
+	SEQ R0
+	RTS
+init.Sum:
+; Initialisation de Sum.x
+	LOAD #0, R0
+	LOAD -2(LB), R1
+	STORE R0, 1(R1)
+; Initialisation de Sum.puiss
+	LOAD #0, R0
+	LOAD -2(LB), R1
+	STORE R0, 2(R1)
+; Initialisation de Sum.f
+	LOAD #0x0.0p0, R0
+	LOAD -2(LB), R1
+	STORE R0, 3(R1)
+	TSTO #0
+; Initialisation explicite de Sum.x
+	LOAD #1, R2
+	STORE R2, 1(R1)
+; Initialisation explicite de Sum.puiss
+	LOAD #1, R2
+	STORE R2, 2(R1)
+; Initialisation explicite de Sum.f
+	LOAD #0, R2
+	FLOAT R2, R2
+	STORE R2, 3(R1)
+	RTS
+code.Sum.s:
+; Sauvegarde des registres : 
+	TSTO #4
+	BOV stack_overflow_error
+	PUSH R4
+	PUSH R3
+	PUSH R2
+	BRA E_Cond.1
+E_Debut.1:
+	LOAD 3(R2), R2
+	LOAD #1, R3
+	LOAD 2(R2), R4
+	CMP #0, R4
+	BEQ division_by_zero_error
+	QUO R4, R3
+	FLOAT R3, R3
+	ADD R3, R2
+	BOV overflow_error
+	LOAD -2(LB), R1
+	STORE R2, 3(R1)
+	LOAD 2(R2), R2
+	LOAD #2, R3
+	MUL R3, R2
+	LOAD -2(LB), R1
+	STORE R2, 2(R1)
+	LOAD 1(R2), R2
+	LOAD #1, R3
+	ADD R3, R2
+	LOAD -2(LB), R1
+	STORE R2, 1(R1)
+E_Cond.1:
+	LOAD 1(R2), R2
+	LOAD -3(LB), R3
+	CMP R3, R2
+	BLT E_Debut.1
+	LOAD 3(R2), R2
+	LOAD R2, R0
+	BRA fin.Sum.s
+fin.Sum.s:
+; Restauration des registres : 
+	POP R2
+	POP R3
+	POP R4
+	RTS
+division_by_zero_error:
+	WSTR "Error: Division by Zero"
+	WNL
+	ERROR
+overflow_error:
+	WSTR "Error: Overflow during arithmetic operation"
+	WNL
+	ERROR
+NullDeferenceError:
+	WSTR "Error: deferencement null"
+	WNL
+	ERROR
+stack_overflow_error:
+	WSTR "Error: Stack Overflow"
+	WNL
+	ERROR

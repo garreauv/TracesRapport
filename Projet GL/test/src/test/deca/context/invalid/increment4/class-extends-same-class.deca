@@ -1,0 +1,5 @@
+// Test : class A extends a
+
+// Historique : cree le 17/01/2023
+
+class A extends A{}

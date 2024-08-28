@@ -1,0 +1,113 @@
+V "GNAT Lib v2020"
+A -gnato
+A -fstack-check=specific
+P SS ZX
+
+RN
+RV NO_EXCEPTIONS
+RV NO_SECONDARY_STACK
+RV NO_DEFAULT_INITIALIZATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLICIT_LOOPS
+RV NO_ELABORATION_CODE
+
+U tstring%b		tstring.ads		bfe7f17a NE OO PK IU
+W ada%s			ada.ads			ada.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+Z ada.text_io%s		a-textio.adb		a-textio.ali
+Z system%s		system.ads		system.ali
+Z system.compare_array_unsigned_8%s  s-carun8.adb  s-carun8.ali
+Z system.concat_2%s	s-conca2.adb		s-conca2.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+W vstrings%s		vstrings.adb		vstrings.ali  ED
+
+U tstring%s		tstring.ads		2f878f4d EB EE OO PK IU
+W ada%s			ada.ads			ada.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+Z ada.text_io%s		a-textio.adb		a-textio.ali
+W vstrings%s		vstrings.adb		vstrings.ali
+
+D ada.ads		20200819050642 76789da1 ada%s
+D a-except.ads		20200819050642 a7106115 ada.exceptions%s
+D a-ioexce.ads		20200819050642 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20200819050642 119b8fb3 ada.streams%s
+D a-tags.ads		20200819050643 edddc8f0 ada.tags%s
+D a-textio.ads		20200819050643 aef4d56d ada.text_io%s
+D a-unccon.ads		20200819050643 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		20200819050644 5ab55268 interfaces%s
+D i-cstrea.ads		20200819050644 e53d8b8e interfaces.c_streams%s
+D system.ads		20200819050647 085b6ffb system%s
+D s-carun8.ads		20200819050645 a903718d system.compare_array_unsigned_8%s
+D s-conca2.ads		20200819050645 02a0d7d0 system.concat_2%s
+D s-crtl.ads		20200819050645 0ebbdb71 system.crtl%s
+D s-exctab.ads		20200819050645 54135002 system.exception_table%s
+D s-ficobl.ads		20200819050645 078245e4 system.file_control_block%s
+D s-parame.ads		20200819050646 4752c4cb system.parameters%s
+D s-secsta.ads		20200819050646 9b3ab94b system.secondary_stack%s
+D s-soflin.ads		20200819050646 a7318a92 system.soft_links%s
+D s-stache.ads		20200819050646 a37c21ec system.stack_checking%s
+D s-stalib.ads		20200819050646 6b7a13f2 system.standard_library%s
+D s-stoele.ads		20200819050646 2dc34a04 system.storage_elements%s
+D s-traent.ads		20200819050646 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20200819050646 5ecf7212 system.unsigned_types%s
+D s-wchcon.ads		20200819050646 1b7d22d2 system.wch_con%s
+D tstring.ads		20221217092829 bfe7f17a tstring%s
+D tstring.ads		20221217092829 bfe7f17a tstring%b
+D vstrings.ads		20221217092829 90607e37 vstrings%s
+D vstrings.adb		20221217092829 a083e43d vstrings%b
+G a e
+G c s s s [s tstring 25 1 none]
+G c Z s s [len tstring 173 12 25_1]
+G c Z s s [max tstring 174 12 25_1]
+G c Z s s [str tstring 175 12 25_1]
+G c Z s s [char tstring 176 12 25_1]
+G c Z s s [Olt tstring 181 12 25_1]
+G c Z s s [Ogt tstring 182 12 25_1]
+G c Z s s [Ole tstring 183 12 25_1]
+G c Z s s [Oge tstring 184 12 25_1]
+G c Z s s [put tstring 189 13 25_1]
+G c Z s s [put tstring 190 13 25_1]
+G c Z s s [put_line tstring 192 13 25_1]
+G c Z s s [put_line tstring 193 13 25_1]
+G c Z s s [get tstring 195 13 25_1]
+G c Z s s [get tstring 197 13 25_1]
+G c Z s s [get_line tstring 199 13 25_1]
+G c Z s s [get_line tstring 200 13 25_1]
+G c Z s s [slice tstring 204 12 25_1]
+G c Z s s [substr tstring 205 12 25_1]
+G c Z s s [delete tstring 206 12 25_1]
+G c Z s s [insert tstring 210 12 25_1]
+G c Z s s [insert tstring 212 12 25_1]
+G c Z s s [insert tstring 214 12 25_1]
+G c Z s s [append tstring 217 12 25_1]
+G c Z s s [append tstring 219 12 25_1]
+G c Z s s [append tstring 221 12 25_1]
+G c Z s s [append tstring 224 12 25_1]
+G c Z s s [append tstring 225 12 25_1]
+G c Z s s [append tstring 226 12 25_1]
+G c Z s s [replace tstring 228 12 25_1]
+G c Z s s [replace tstring 230 12 25_1]
+G c Z s s [replace tstring 232 12 25_1]
+G c Z s s [Oconcat tstring 237 12 25_1]
+G c Z s s [Oconcat tstring 238 12 25_1]
+G c Z s s [Oconcat tstring 239 12 25_1]
+G c Z s s [Oconcat tstring 240 12 25_1]
+G c Z s s [Oconcat tstring 241 12 25_1]
+G c Z s s [index tstring 245 12 25_1]
+G c Z s s [index tstring 247 12 25_1]
+G c Z s s [index tstring 249 12 25_1]
+G c Z s s [rindex tstring 253 12 25_1]
+G c Z s s [rindex tstring 255 12 25_1]
+G c Z s s [rindex tstring 257 12 25_1]
+G c Z s s [vstr tstring 262 12 25_1]
+G c Z s s [vstr tstring 263 12 25_1]
+G c Z s s [Oadd tstring 264 12 25_1]
+G c Z s s [Oadd tstring 265 12 25_1]
+G c Z s s [vstringIP tstring 277 10 25_1]
+G c Z s s [format tstring 168 13 25_1]
+G r i none [s tstring 25 1 none] [vstrings standard 164 9 none]
+X 26 tstring.ads
+25K9*TSTRING[27|164]
+X 27 vstrings.ads
+164k9*VSTRINGS 26|24w6 26r7 27|284e13
+

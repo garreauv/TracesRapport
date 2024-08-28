@@ -1,0 +1,24 @@
+// Description:
+//    Programme minimaliste utilisant println et des commentaires de plusieurs lignes
+//
+// Resultats:
+//    multi_line_com.res
+//
+// Historique:
+//    cree le 09/01/2023
+
+/*  Commmentaire Commmentaire
+Commmentaire Commmentaire
+*/
+{
+        /*Commmentaire
+        Commmentaire
+        */
+        /*Commmentaire
+        //Commmentaire
+        Commmentaire*/
+        println("Hello");
+        //Commentaire
+}
+//Commemntaire
+

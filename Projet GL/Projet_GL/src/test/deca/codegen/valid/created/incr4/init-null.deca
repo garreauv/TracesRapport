@@ -1,0 +1,17 @@
+//ok
+
+// Test A a = null
+
+// Historique : cree le 21/01/2023
+
+class A{}
+
+{
+    A a = null;
+    if ( a == null){
+        print("ok");
+    }
+    else{
+        print("error");
+    }
+}

@@ -1,0 +1,16 @@
+// Description:
+//    if avec une condtion au else
+//
+// Resultats:
+//    no viable alternative at else ()
+//
+// Historique:
+//    cree le 10/01/2023
+
+{
+    if(a){
+
+    } else (b){
+        
+    }
+}

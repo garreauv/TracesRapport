@@ -1,0 +1,15 @@
+//test rule (3.31)
+
+// Raison : Print arguments
+
+// Résultats : Ligne 14 "print arguments must be int, float or string type"
+
+// Historique :
+//  cree le 05/01/2023
+
+{
+    int x = 2;
+    
+    //Must be refused
+    print(print(2));
+}

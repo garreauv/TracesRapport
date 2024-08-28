@@ -1,0 +1,8 @@
+//Description
+//Printing a string 
+{
+    println("Test println");
+    print("Test ");
+    print("print");
+    println();
+}

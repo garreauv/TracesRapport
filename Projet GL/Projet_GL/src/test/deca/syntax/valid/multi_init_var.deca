@@ -1,0 +1,16 @@
+// Description:
+//    Programme declarant chaque type de variable plusieurs fois en les initialisant
+//
+// Resultats:
+//    multi_init_var.res
+//
+// Historique:
+//    cree le 09/01/2023
+
+{
+        int a = 1;
+        float c,d = 1.1;
+        boolean e,f,g = true;
+        void h,i,j,l ;
+}
+

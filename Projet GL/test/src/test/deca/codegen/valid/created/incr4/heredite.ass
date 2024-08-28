@@ -1,0 +1,278 @@
+	ADDSP #21
+	TSTO #28
+	BOV stack_overflow_error
+; Code de la table des méthodes de Object
+	LOAD #null, R0
+	STORE R0, 1(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 2(GB)
+; Code de la table des méthodes de A
+	LEA 1(GB), R0
+	STORE R0, 3(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 4(GB)
+	LOAD code.A.getX, R0
+	STORE R0, 5(GB)
+; Code de la table des méthodes de B
+	LEA 3(GB), R0
+	STORE R0, 6(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 7(GB)
+	LOAD code.A.getX, R0
+	STORE R0, 8(GB)
+	LOAD code.B.getY, R0
+	STORE R0, 9(GB)
+; Code de la table des méthodes de C
+	LEA 6(GB), R0
+	STORE R0, 10(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 11(GB)
+	LOAD code.A.getX, R0
+	STORE R0, 12(GB)
+	LOAD code.B.getY, R0
+	STORE R0, 13(GB)
+	LOAD code.C.getZ, R0
+	STORE R0, 14(GB)
+; Code de la table des méthodes de D
+	LEA 3(GB), R0
+	STORE R0, 15(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 16(GB)
+	LOAD code.D.getX, R0
+	STORE R0, 17(GB)
+; Start main program
+; Variables declarations:
+	NEW #3, R2
+	LEA 3(GB), R0
+	STORE R0, 0(R2)
+	PUSH R2
+	BSR init.A
+	POP R2
+	STORE R2, 18(GB)
+	NEW #4, R2
+	LEA 6(GB), R0
+	STORE R0, 0(R2)
+	PUSH R2
+	BSR init.B
+	POP R2
+	STORE R2, 20(GB)
+	NEW #5, R2
+	LEA 10(GB), R0
+	STORE R0, 0(R2)
+	PUSH R2
+	BSR init.C
+	POP R2
+	STORE R2, 22(GB)
+	NEW #3, R2
+	LEA 15(GB), R0
+	STORE R0, 0(R2)
+	PUSH R2
+	BSR init.D
+	POP R2
+	STORE R2, 24(GB)
+; Beginning of main instructions:
+; Appel de méthode :
+	ADDSP #1
+	LOAD 18(GB), R2
+	STORE R2, 0(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ NullDeferenceError
+	LOAD 0(R2), R2
+	BSR 2(R2)
+	SUBSP #0
+	LOAD R0, R2
+	LOAD R2, R1
+	WINT
+	WSTR " "
+; Appel de méthode :
+	ADDSP #1
+	LOAD 20(GB), R2
+	STORE R2, 0(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ NullDeferenceError
+	LOAD 0(R2), R2
+	BSR 2(R2)
+	SUBSP #0
+	LOAD R0, R2
+	LOAD R2, R1
+	WINT
+	WSTR " "
+; Appel de méthode :
+	ADDSP #1
+	LOAD 20(GB), R2
+	STORE R2, 0(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ NullDeferenceError
+	LOAD 0(R2), R2
+	BSR 3(R2)
+	SUBSP #0
+	LOAD R0, R2
+	LOAD R2, R1
+	WINT
+	WSTR " "
+; Appel de méthode :
+	ADDSP #1
+	LOAD 22(GB), R2
+	STORE R2, 0(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ NullDeferenceError
+	LOAD 0(R2), R2
+	BSR 2(R2)
+	SUBSP #0
+	LOAD R0, R2
+	LOAD R2, R1
+	WINT
+	WSTR " "
+; Appel de méthode :
+	ADDSP #1
+	LOAD 22(GB), R2
+	STORE R2, 0(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ NullDeferenceError
+	LOAD 0(R2), R2
+	BSR 3(R2)
+	SUBSP #0
+	LOAD R0, R2
+	LOAD R2, R1
+	WINT
+	WSTR " "
+; Appel de méthode :
+	ADDSP #1
+	LOAD 22(GB), R2
+	STORE R2, 0(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ NullDeferenceError
+	LOAD 0(R2), R2
+	BSR 4(R2)
+	SUBSP #0
+	LOAD R0, R2
+	LOAD R2, R1
+	WINT
+	WSTR " "
+; Appel de méthode :
+	ADDSP #1
+	LOAD 24(GB), R2
+	STORE R2, 0(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ NullDeferenceError
+	LOAD 0(R2), R2
+	BSR 3(R2)
+	SUBSP #0
+	LOAD R0, R2
+	LOAD R2, R1
+	WINT
+	HALT
+; End main program
+code.Object.equals:
+	LOAD -2(LB), R0
+	CMP -3(LB), R0
+	SEQ R0
+	RTS
+init.A:
+; Initialisation de A.x
+	LOAD #0, R0
+	LOAD -2(LB), R1
+	STORE R0, 1(R1)
+; Initialisation de A.a
+	LOAD #0, R0
+	LOAD -2(LB), R1
+	STORE R0, 2(R1)
+	TSTO #0
+; Initialisation explicite de A.x
+	LOAD #5, R2
+	STORE R2, 1(R1)
+; Initialisation explicite de A.a
+	RTS
+init.B:
+; Initialisation de B.y
+	LOAD #0, R0
+	LOAD -2(LB), R1
+	STORE R0, 3(R1)
+; Appel de l'initialisation des champs hérités de A
+	PUSH R1
+	BSR init.A
+	SUBSP #1
+	TSTO #0
+; Initialisation explicite de B.y
+	LOAD #42, R2
+	STORE R2, 3(R1)
+	RTS
+init.C:
+; Initialisation de C.z
+	LOAD #0x0.0p0, R0
+	LOAD -2(LB), R1
+	STORE R0, 4(R1)
+; Appel de l'initialisation des champs hérités de B
+	PUSH R1
+	BSR init.B
+	SUBSP #1
+	TSTO #0
+; Initialisation explicite de C.z
+	LOAD #0x1.921cacp1, R2
+	STORE R2, 4(R1)
+	RTS
+init.D:
+; Appel de l'initialisation des champs hérités de A
+	PUSH R1
+	BSR init.A
+	SUBSP #1
+	TSTO #0
+	RTS
+code.A.getX:
+; Sauvegarde des registres : 
+	TSTO #0
+	BOV stack_overflow_error
+	LOAD -2(LB), R1
+	LOAD 1(R1), R2
+	LOAD R2, R0
+	BRA fin.A.getX
+fin.A.getX:
+; Restauration des registres : 
+	RTS
+code.B.getY:
+; Sauvegarde des registres : 
+	TSTO #0
+	BOV stack_overflow_error
+	LOAD -2(LB), R1
+	LOAD 3(R1), R2
+	LOAD R2, R0
+	BRA fin.B.getY
+fin.B.getY:
+; Restauration des registres : 
+	RTS
+code.C.getZ:
+; Sauvegarde des registres : 
+	TSTO #0
+	BOV stack_overflow_error
+	LOAD -2(LB), R1
+	LOAD 4(R1), R2
+	LOAD R2, R0
+	BRA fin.C.getZ
+fin.C.getZ:
+; Restauration des registres : 
+	RTS
+code.D.getX:
+; Sauvegarde des registres : 
+	TSTO #0
+	BOV stack_overflow_error
+	LOAD #1024, R2
+	LOAD R2, R0
+	BRA fin.D.getX
+fin.D.getX:
+; Restauration des registres : 
+	RTS
+NullDeferenceError:
+	WSTR "Error: deferencement null"
+	WNL
+	ERROR
+stack_overflow_error:
+	WSTR "Error: Stack Overflow"
+	WNL
+	ERROR

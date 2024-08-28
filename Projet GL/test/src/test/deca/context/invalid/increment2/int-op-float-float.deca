@@ -1,0 +1,16 @@
+// Cause : type_arith_op(float, float) = float
+
+// Resultats : Ligne 15 b must be a float
+
+// Historique : cree le 09/01/2023
+
+{
+    int a;
+    float b,c;
+
+    b = 2.1;
+    c = 4.1;
+
+    //Must be refused
+    a = b + c;
+}

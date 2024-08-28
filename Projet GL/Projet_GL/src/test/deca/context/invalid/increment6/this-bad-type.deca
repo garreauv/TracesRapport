@@ -1,0 +1,13 @@
+// Test 3.43 this bad type
+
+// Historique : cree le 18/01/2023
+
+class A{
+    protected int a;
+
+    void m(){
+        
+        //Must be refused
+        this.a = true;
+    }
+}

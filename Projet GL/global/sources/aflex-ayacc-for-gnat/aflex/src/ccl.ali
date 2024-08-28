@@ -1,0 +1,115 @@
+V "GNAT Lib v2020"
+A -gnato
+A -fstack-check=specific
+P ZX
+
+RN
+RV NO_IO
+
+U ccl%b			ccl.adb			22af4e79 NE OO PK IU
+W ada%s			ada.ads			ada.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W misc%s		misc.adb		misc.ali
+W misc_defs%s		misc_defs.adb		misc_defs.ali
+W tstring%s		tstring.ads		tstring.ali
+
+U ccl%s			ccl.ads			c9594e0c EE NE OO PK IU
+W ada%s			ada.ads			ada.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W misc_defs%s		misc_defs.adb		misc_defs.ali
+
+D ada.ads		20200819050642 76789da1 ada%s
+D a-except.ads		20200819050642 a7106115 ada.exceptions%s
+D a-ioexce.ads		20200819050642 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20200819050642 119b8fb3 ada.streams%s
+D a-tags.ads		20200819050643 edddc8f0 ada.tags%s
+D a-textio.ads		20200819050643 aef4d56d ada.text_io%s
+D a-unccon.ads		20200819050643 0e9b276f ada.unchecked_conversion%s
+D ccl.ads		20221217092829 96d35f00 ccl%s
+D ccl.adb		20221217092829 d05325a4 ccl%b
+D interfac.ads		20200819050644 5ab55268 interfaces%s
+D i-cstrea.ads		20200819050644 e53d8b8e interfaces.c_streams%s
+D misc.ads		20221217092829 8442d4ab misc%s
+D misc_defs.ads		20221217092829 f17ec461 misc_defs%s
+D system.ads		20200819050647 085b6ffb system%s
+D s-crtl.ads		20200819050645 0ebbdb71 system.crtl%s
+D s-exctab.ads		20200819050645 54135002 system.exception_table%s
+D s-ficobl.ads		20200819050645 078245e4 system.file_control_block%s
+D s-parame.ads		20200819050646 4752c4cb system.parameters%s
+D s-secsta.ads		20200819050646 9b3ab94b system.secondary_stack%s
+D s-soflin.ads		20200819050646 a7318a92 system.soft_links%s
+D s-stache.ads		20200819050646 a37c21ec system.stack_checking%s
+D s-stalib.ads		20200819050646 6b7a13f2 system.standard_library%s
+D s-stoele.ads		20200819050646 2dc34a04 system.storage_elements%s
+D s-traent.ads		20200819050646 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20200819050646 5ecf7212 system.unsigned_types%s
+D s-wchcon.ads		20200819050646 1b7d22d2 system.wch_con%s
+D tstring.ads		20221217092829 bfe7f17a tstring%s
+D vstrings.ads		20221217092829 90607e37 vstrings%s
+G a e
+G c Z s b [ccladd ccl 26 13 none]
+G c Z s b [cclinit ccl 28 12 none]
+G c Z s b [cclnegate ccl 29 13 none]
+G c Z s b [list_character_set ccl 30 13 none]
+G r c none [ccladd ccl 26 13 none] [reallocate_character_array misc_defs 575 13 none]
+G r c none [cclinit ccl 28 12 none] [reallocate_integer_array misc_defs 563 13 none]
+G r c none [list_character_set ccl 30 13 none] [readable_form misc 61 12 none]
+G r c none [list_character_set ccl 30 13 none] [put tstring 189 13 25_1]
+X 1 ada.ads
+16K9*Ada 20e8 8|24r17 24r45 9|24r17 24r60 111r5 118r9 130r11 134r9 139r5
+X 6 a-textio.ads
+57K13*Text_IO 727e16 8|24w21 24r49 9|24w21 24r64 111r9 118r13 130r15 134r13
+. 139r9
+64P9*File_Type 8|30r42 9|107r42
+386U14*Put 9|111s17 118s21 134s21 139s17
+459U14*Put 9|130s23
+X 8 ccl.ads
+25K9*CCL 32l5 32e8 9|25b14 141l5 141t8
+26U13*CCLADD 26>20 27>20 9|28b13 56l7 56t13
+26i20 CCLP{integer} 9|28b20 32r19 33r19 53r12
+27e20 CH{character} 9|29b20 37r29 54r23
+28V12*CCLINIT{integer} 9|60b12 92l7 92t14
+29U13*CCLNEGATE 29>23 9|96b13 99l7 99t16
+29i23 CCLP{integer} 9|96b23 98r11
+30U13*LIST_CHARACTER_SET 30>32 31>32 9|107b13 140l7 140t25
+30p32 F{6|64P9} 9|107b32 111r21 118r25 120r21 130r27 131r23 134r25 139r21
+31a32 CSET{13|439A8} 9|108b32 115r11 123r39
+X 9 ccl.adb
+30i5 IND{integer} 33m5 37r18 42r15
+30i10 LEN{integer} 32m5 36r19 42r21 53r21
+30i15 NEWPOS{integer} 42m5 44r9 54r12
+36i9 I{integer} 37r24
+109i5 I{integer} 113m5 114r12 115r16 116r23 120r57 122m9 122r14 123r17 123r44
+. 124m11 124r16 127r13 131r59 136m7 136r12
+109i8 START_CHAR{integer} 116m9 127r21
+X 12 misc.ads
+26K9*MISC 9|24w30 120r24 131r26 12|73e9
+61V12*READABLE_FORM{28|168R8[27|25]} 9|120s29 131s31
+X 13 misc_defs.ads
+32K9*MISC_DEFS 8|24w6 24r34 9|24w6 24r49 13|587e14
+55A8*UNBOUNDED_INT_ARRAY(integer)<integer>
+56P8*INT_PTR(55A8)
+64A8*CHAR_ARRAY(character)<integer>
+65P8*CHAR_PTR(64A8)
+164i3*CSIZE{integer} 9|114r17 123r22
+168i3*MAX_CCLS_INCREMENT{integer} 9|64r44
+172i3*MAX_CCL_TBL_SIZE_INCREMENT{integer} 9|46r9
+439A8*C_SIZE_BOOL_ARRAY(boolean)<integer> 8|31r42 9|108r42
+512i3*CURRENT_MAX_CCL_TBL_SIZE{integer} 9|44r19 45m7 45r35 50r42
+512i29*LASTCCL{integer} 9|62m5 62r16 63r9 73r9 76r14 84r14 84r33 84r55 87r12
+. 88r11 91r12
+512i38*CURRENT_MAXCCLS{integer} 9|63r20 64m7 64r26 68r40 69r40 70r39
+513p3*CCLMAP{56P8} 9|33r12 68m32 68r32 76r7 84r7 84r26
+513p11*CCLLEN{56P8} 9|32r12 53r5 69m32 69r32 84r48 87r5
+513p19*CCLNG{56P8} 9|70m32 70r32 88r5 98r5
+515p3*CCLTBL{65P8} 9|37r11 50m34 50r34 54r5
+540i49*NUM_REALLOCS{integer} 9|48m7 48r23 66m7 66r23
+563U13*REALLOCATE_INTEGER_ARRAY 9|68s7 69s7 70s7
+575U13*REALLOCATE_CHARACTER_ARRAY 9|50s7
+X 27 tstring.ads
+25K9*TSTRING[28|164] 9|24w36 120r9 131r11
+X 28 vstrings.ads
+168R8*VSTRING
+189U13*PUT 9|120s17[27|25] 131s19[27|25]
+

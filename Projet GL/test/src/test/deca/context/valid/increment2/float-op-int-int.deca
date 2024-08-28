@@ -1,0 +1,16 @@
+//Raison : type_arith_op(int, int) = int
+
+// Resultats : Ligne 15 c must be an integer
+
+// Historique : cree le 09/01/2023
+
+{
+    int a,b;
+    float c;
+
+    a = 2;
+    b = 3;
+
+    //Must be refused
+    c = a+b;
+}

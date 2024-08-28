@@ -1,0 +1,10 @@
+// test not 1
+
+// Historique : cree le 20/01/2023
+
+{
+    boolean b = !0;
+    if(b){
+        print("error");
+    }
+}

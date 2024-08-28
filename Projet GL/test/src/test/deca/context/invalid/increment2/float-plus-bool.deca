@@ -1,0 +1,16 @@
+//test rule (3.33)
+
+// Raison : Typage incompatibles
+
+// Résultats : Ligne 15 "types incompatibles"
+
+// Historique :
+//  cree le 08/01/2023
+
+{
+    float f,g;
+    boolean b;
+
+    //Must be refused
+    f = g + b;
+}

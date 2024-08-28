@@ -1,0 +1,22 @@
+//okok
+
+{
+    if(true || false && false){
+        print("ok");
+    }
+    if((true || false) && false){
+        print("Error");
+    }
+    if(false || true && false){
+        print("Error");
+    }
+    if(!true && true){
+        print("Error");
+    }
+    if(!true && false){
+        print("Error");
+    }
+    if(!(true && false)){
+        print("ok");
+    }
+}

@@ -1,0 +1,9 @@
+// Test bool = 1
+
+// Historique : cree le 11/01/2023
+
+{
+    boolean a = 1;
+
+    a = true;
+}

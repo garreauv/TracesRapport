@@ -1,0 +1,5 @@
+//Description 
+//Wrong type cast 
+{
+    int x = true; 
+}

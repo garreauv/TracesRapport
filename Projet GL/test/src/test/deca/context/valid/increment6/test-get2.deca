@@ -1,0 +1,17 @@
+// Another test getX
+
+// Historique : cree le 20/01/2023
+
+class A{
+    protected int x;
+
+    int getX(){
+        return this.x;
+    }
+}
+
+{
+    A a = new A();
+
+    int x = a.getX();
+}

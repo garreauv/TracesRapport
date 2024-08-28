@@ -1,0 +1,19 @@
+// Test rule 2.7 redifinition of a method with another return type
+
+// Historique : cree le 17/01/2023
+
+class A {
+    protected int a;
+
+    int meth(){
+        return 1;
+    }
+}
+
+class B extends A{
+    protected float b;
+
+    //Must be refused
+    void meth(){}
+}
+

@@ -1,0 +1,95 @@
+	ADDSP #2
+	TSTO #2
+	BOV stack_overflow_error
+; Code de la table des méthodes de Object
+	LOAD #null, R0
+	STORE R0, 1(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 2(GB)
+; Start main program
+; Variables declarations:
+; Beginning of main instructions:
+	LOAD #1, R2
+	CMP #1, R2
+	BEQ E_Fin.22
+	LOAD #0, R3
+	CMP #1, R3
+	BNE E_Sinon.11
+	LOAD #0, R4
+	CMP #1, R4
+	BNE E_Sinon.11
+E_Fin.22:
+	WSTR "ok"
+	BRA E_Fin.1
+E_Sinon.11:
+E_Fin.1:
+	LOAD #1, R2
+	CMP #1, R2
+	BEQ E_Fin.34
+	LOAD #0, R3
+	CMP #1, R3
+	BNE E_Sinon.23
+E_Fin.34:
+	LOAD #0, R4
+	CMP #1, R4
+	BNE E_Sinon.23
+	WSTR "Error"
+	BRA E_Fin.2
+E_Sinon.23:
+E_Fin.2:
+	LOAD #0, R2
+	CMP #1, R2
+	BEQ E_Fin.46
+	LOAD #1, R3
+	CMP #1, R3
+	BNE E_Sinon.35
+	LOAD #0, R4
+	CMP #1, R4
+	BNE E_Sinon.35
+E_Fin.46:
+	WSTR "Error"
+	BRA E_Fin.3
+E_Sinon.35:
+E_Fin.3:
+	LOAD #1, R2
+	CMP #1, R2
+	BEQ E_Sinon.47
+	LOAD #1, R3
+	CMP #1, R3
+	BNE E_Sinon.47
+	WSTR "Error"
+	BRA E_Fin.4
+E_Sinon.47:
+E_Fin.4:
+	LOAD #1, R2
+	CMP #1, R2
+	BEQ E_Sinon.58
+	LOAD #0, R3
+	CMP #1, R3
+	BNE E_Sinon.58
+	WSTR "Error"
+	BRA E_Fin.5
+E_Sinon.58:
+E_Fin.5:
+	LOAD #1, R2
+	CMP #1, R2
+	BNE E_Fin.710
+	LOAD #0, R3
+	CMP #1, R3
+	BEQ E_Sinon.69
+E_Fin.710:
+	WSTR "ok"
+	BRA E_Fin.6
+E_Sinon.69:
+E_Fin.6:
+	HALT
+; End main program
+code.Object.equals:
+	LOAD -2(LB), R0
+	CMP -3(LB), R0
+	SEQ R0
+	RTS
+stack_overflow_error:
+	WSTR "Error: Stack Overflow"
+	WNL
+	ERROR

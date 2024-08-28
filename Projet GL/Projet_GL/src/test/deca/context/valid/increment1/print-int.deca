@@ -1,0 +1,9 @@
+// Résultats : 7
+
+// Historique :
+//  cree le 09/01/2023
+
+{
+    int a = 7;
+    println(a);
+}

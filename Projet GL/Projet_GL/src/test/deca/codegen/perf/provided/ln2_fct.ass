@@ -1,0 +1,208 @@
+	ADDSP #12
+	TSTO #13
+	BOV stack_overflow_error
+; Code de la table des méthodes de Object
+	LOAD #null, R0
+	STORE R0, 1(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 2(GB)
+; Code de la table des méthodes de Polyexp
+	LEA 1(GB), R0
+	STORE R0, 3(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 4(GB)
+	LOAD code.Polyexp.pexp, R0
+	STORE R0, 5(GB)
+; Start main program
+; Variables declarations:
+	NEW #1, R2
+	LEA 3(GB), R0
+	STORE R0, 0(R2)
+	PUSH R2
+	BSR init.Polyexp
+	POP R2
+	STORE R2, 6(GB)
+	LOAD #0x0.0p0, R2
+	STORE R2, 8(GB)
+	LOAD #0x1.0p0, R2
+	STORE R2, 9(GB)
+	LOAD #0x1.0p0, R2
+	LOAD #0x0.0p0, R3
+	ADD R3, R2
+	OPP R2, R2
+	STORE R2, 10(GB)
+	LOAD #0x1.6fc2ecp-1, R2
+	STORE R2, 11(GB)
+; Beginning of main instructions:
+	BRA E_Cond.1
+E_Debut.1:
+; Appel de méthode :
+	ADDSP #2
+	LOAD 6(GB), R2
+	STORE R2, 0(SP)
+	LOAD 8(GB), R2
+	LOAD 9(GB), R3
+	ADD R3, R2
+	BOV overflow_error
+	LOAD #0x1.0p1, R3
+	CMP #0x0.0p0, R3
+	BEQ division_by_zero_error
+	DIV R3, R2
+	STORE R2, 12(GB)
+	STORE R2, -1(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ NullDeferenceError
+	LOAD 0(R2), R2
+	BSR 2(R2)
+	SUBSP #1
+	LOAD R0, R2
+	STORE R2, 13(GB)
+	LOAD #0x0.0p0, R3
+	CMP R3, R2
+	BLE E_Sinon.21
+	LOAD 12(GB), R2
+	STORE R2, 9(GB)
+	LOAD 13(GB), R2
+	STORE R2, 11(GB)
+	BRA E_Fin.2
+E_Sinon.21:
+	LOAD 12(GB), R2
+	STORE R2, 8(GB)
+	LOAD 13(GB), R2
+	STORE R2, 10(GB)
+E_Fin.2:
+E_Cond.1:
+	LOAD 9(GB), R2
+	LOAD 8(GB), R3
+	LOAD #0x1.0p-23, R4
+	ADD R4, R3
+	BOV overflow_error
+	CMP R3, R2
+	BGE E_Debut.1
+	LOAD 8(GB), R1
+	WFLOAT
+	WSTR " = "
+	LOAD 8(GB), R1
+	WFLOATX
+	WNL
+	HALT
+; End main program
+code.Object.equals:
+	LOAD -2(LB), R0
+	CMP -3(LB), R0
+	SEQ R0
+	RTS
+init.Polyexp:
+	TSTO #0
+	RTS
+code.Polyexp.pexp:
+; Sauvegarde des registres : 
+	TSTO #10
+	PUSH R10
+	PUSH R9
+	PUSH R8
+	PUSH R7
+	PUSH R6
+	PUSH R5
+	PUSH R4
+	PUSH R3
+	PUSH R2
+	LOAD -3(LB), R2
+	LOAD -3(LB), R3
+	LOAD -3(LB), R4
+	LOAD -3(LB), R5
+	LOAD -3(LB), R6
+	LOAD -3(LB), R7
+	LOAD -3(LB), R8
+	LOAD #0x1.0p0, R9
+	LOAD #0x1.3bp12, R10
+	CMP #0x0.0p0, R10
+	BEQ division_by_zero_error
+	DIV R10, R9
+	MUL R9, R8
+	BOV overflow_error
+	LOAD #0x1.0p0, R9
+	LOAD #0x1.68p9, R10
+	CMP #0x0.0p0, R10
+	BEQ division_by_zero_error
+	DIV R10, R9
+	ADD R9, R8
+	BOV overflow_error
+	MUL R8, R7
+	BOV overflow_error
+	LOAD #0x1.0p0, R8
+	LOAD #0x1.ep6, R9
+	CMP #0x0.0p0, R9
+	BEQ division_by_zero_error
+	DIV R9, R8
+	ADD R8, R7
+	BOV overflow_error
+	MUL R7, R6
+	BOV overflow_error
+	LOAD #0x1.0p0, R7
+	LOAD #0x1.8p4, R8
+	CMP #0x0.0p0, R8
+	BEQ division_by_zero_error
+	DIV R8, R7
+	ADD R7, R6
+	BOV overflow_error
+	MUL R6, R5
+	BOV overflow_error
+	LOAD #0x1.0p0, R6
+	LOAD #0x1.8p2, R7
+	CMP #0x0.0p0, R7
+	BEQ division_by_zero_error
+	DIV R7, R6
+	ADD R6, R5
+	BOV overflow_error
+	MUL R5, R4
+	BOV overflow_error
+	LOAD #0x1.0p0, R5
+	LOAD #0x1.0p1, R6
+	CMP #0x0.0p0, R6
+	BEQ division_by_zero_error
+	DIV R6, R5
+	ADD R5, R4
+	BOV overflow_error
+	MUL R4, R3
+	BOV overflow_error
+	LOAD #0x1.0p0, R4
+	ADD R4, R3
+	BOV overflow_error
+	MUL R3, R2
+	BOV overflow_error
+	LOAD #1, R3
+	FLOAT R3, R3
+	SUB R3, R2
+	BOV overflow_error
+	LOAD R2, R0
+	BRA fin.Polyexp.pexp
+fin.Polyexp.pexp:
+; Restauration des registres : 
+	POP R2
+	POP R3
+	POP R4
+	POP R5
+	POP R6
+	POP R7
+	POP R8
+	POP R9
+	POP R10
+	RTS
+division_by_zero_error:
+	WSTR "Error: Division by Zero"
+	WNL
+	ERROR
+overflow_error:
+	WSTR "Error: Overflow during arithmetic operation"
+	WNL
+	ERROR
+NullDeferenceError:
+	WSTR "Null deferencement error"
+	WNL
+	ERROR
+stack_overflow_error:
+	WSTR "Error: Stack Overflow"
+	WNL
+	ERROR

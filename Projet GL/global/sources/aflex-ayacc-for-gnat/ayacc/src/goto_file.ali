@@ -1,0 +1,123 @@
+V "GNAT Lib v2020"
+A -gnato
+A -fstack-check=specific
+P SS ZX
+
+RN
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTION_PROPAGATION
+RV NO_EXCEPTIONS
+RV NO_IO
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_ELABORATION_CODE
+
+U goto_file%b		goto_file.adb		4e6537c7 OO PK
+W ada%s			ada.ads			ada.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W ayacc_file_names%s	ayacc_file_names.adb	ayacc_file_names.ali
+Z interfaces%s		interfac.ads		interfac.ali
+W rule_table%s		rule_table.adb		rule_table.ali
+W symbol_table%s	symbol_table.adb	symbol_table.ali
+Z system.concat_2%s	s-conca2.adb		s-conca2.ali
+Z system.concat_3%s	s-conca3.adb		s-conca3.ali
+Z system.concat_5%s	s-conca5.adb		s-conca5.ali
+Z system.img_int%s	s-imgint.adb		s-imgint.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+
+U goto_file%s		goto_file.ads		c9bd3d7a EE NE OO PK
+
+D ada.ads		20200819050642 76789da1 ada%s
+D a-except.ads		20200819050642 a7106115 ada.exceptions%s
+D a-ioexce.ads		20200819050642 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20200819050642 119b8fb3 ada.streams%s
+D a-tags.ads		20200819050643 edddc8f0 ada.tags%s
+D a-textio.ads		20200819050643 aef4d56d ada.text_io%s
+D a-unccon.ads		20200819050643 0e9b276f ada.unchecked_conversion%s
+D ayacc_file_names.ads	20221217092829 a6c3e0e9 ayacc_file_names%s
+D goto_file.ads		20221217092829 c9bd3d7a goto_file%s
+D goto_file.adb		20221217092829 5b330701 goto_file%b
+D interfac.ads		20200819050644 5ab55268 interfaces%s
+D i-cstrea.ads		20200819050644 e53d8b8e interfaces.c_streams%s
+D rule_table.ads	20221217092829 d24be121 rule_table%s
+D symbol_table.ads	20221217092829 0697d919 symbol_table%s
+D system.ads		20200819050647 085b6ffb system%s
+D s-conca2.ads		20200819050645 02a0d7d0 system.concat_2%s
+D s-conca3.ads		20200819050645 0b705ca5 system.concat_3%s
+D s-conca5.ads		20200819050645 875e432e system.concat_5%s
+D s-crtl.ads		20200819050645 0ebbdb71 system.crtl%s
+D s-exctab.ads		20200819050645 54135002 system.exception_table%s
+D s-ficobl.ads		20200819050645 078245e4 system.file_control_block%s
+D s-imgint.ads		20200819050645 02dbe0c2 system.img_int%s
+D s-parame.ads		20200819050646 4752c4cb system.parameters%s
+D s-secsta.ads		20200819050646 9b3ab94b system.secondary_stack%s
+D s-soflin.ads		20200819050646 a7318a92 system.soft_links%s
+D s-stache.ads		20200819050646 a37c21ec system.stack_checking%s
+D s-stalib.ads		20200819050646 6b7a13f2 system.standard_library%s
+D s-stoele.ads		20200819050646 2dc34a04 system.storage_elements%s
+D s-traent.ads		20200819050646 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20200819050646 5ecf7212 system.unsigned_types%s
+D s-wchcon.ads		20200819050646 1b7d22d2 system.wch_con%s
+G a e
+G c Z s b [open_write goto_file 60 15 none]
+G c Z s b [close_write goto_file 61 15 none]
+G c Z s b [write goto_file 62 15 none]
+G c Z s b [write_line goto_file 63 15 none]
+G c Z s b [write goto_file 64 15 none]
+G r c none [open_write goto_file 60 15 none] [get_goto_file_name ayacc_file_names 73 15 none]
+G r c none [open_write goto_file 60 15 none] [goto_tables_unit_name ayacc_file_names 86 12 none]
+G r c none [close_write goto_file 61 15 none] [first_rule rule_table 73 15 none]
+G r c none [close_write goto_file 61 15 none] [last_rule rule_table 74 15 none]
+G r c none [close_write goto_file 61 15 none] [length_of rule_table 71 15 none]
+G r c none [close_write goto_file 61 15 none] [get_lhs rule_table 65 15 none]
+G r c none [close_write goto_file 61 15 none] [goto_tables_unit_name ayacc_file_names 86 12 none]
+X 1 ada.ads
+16K9*Ada 20e8 10|1r6 2r6
+X 6 a-textio.ads
+57K13*Text_IO 727e16 10|1w10 2r10
+64P9*File_Type 10|11r16
+66n32*Out_File{66E9} 10|15r25
+99U14*Create 10|15s8
+129U14*Close 10|81s9
+386U14*Put 10|99s9
+459U14*Put 10|87s9
+498U14*Put_Line 10|93s9
+508U14*Put_Line 10|37s17
+544X4*Name_Error 10|36r18
+545X4*Use_Error 10|36r31
+X 8 ayacc_file_names.ads
+61K9*Ayacc_File_Names 98e21 10|1w45 2r45
+73V15*Get_Goto_File_Name{string} 10|15s35 37s54
+86V12*Goto_Tables_Unit_Name{string} 10|17s32 80s29
+X 9 goto_file.ads
+58K9*Goto_File 66l5 66e14 10|3b14 103l5 103t14
+60U15*Open_Write 10|13b15 39l9 39t19
+61U15*Close_Write 10|42b15 82l9 82t20
+62U15*Write 62>21 10|50s9 54s13 65s9 75s17 85b15 88l9 88t14
+62a21 S{string} 10|85b21 87r23
+63U15*Write_Line 63>26 10|17s8 18s8 19s8 20s8 21s8 22s8 23s8 24s8 25s8 26s8
+. 27s8 28s8 29s8 30s8 32s8 33s8 34s8 44s9 45s9 46s9 47s9 56s17 58s17 71s17
+. 73s17 80s9 91b15 94l9 94t19
+63a26 S{string} 10|91b26 93r28
+64U15*Write 64>21 10|60s17 97b15 100l9 100t14
+64e21 C{character} 10|97b21 99r23
+X 10 goto_file.adb
+5a3 SCCS_ID{string}
+9a3 Rcs_ID{string}
+11p5 The_File{6|64P9} 15m15 15r15 81m15 81r15 87r13 93r18 99r13
+53i13 R<short_integer> 54r44 55r16 57r19
+69i13 R<short_integer> 70r16 71r58 72r19 73r58 75r52
+X 13 rule_table.ads
+49K9*Rule_Table 10|1w19 2r19 13|87e15
+58I10*Rule<short_integer> 10|50r56 51r24 66r15 67r13
+65V15*Get_LHS{14|52I11} 10|71s50 73s50 75s44
+71V15*Length_of{natural} 10|54s34
+73V15*First_Rule{58I10} 10|50s67 53s18 66s26 69s18
+74V15*Last_Rule{58I10} 10|51s35 53s30 55s20 67s24 69s30 70s20
+X 14 symbol_table.ads
+48K9*Symbol_Table 10|1w31 2r31 14|82e17
+52I11*Grammar_Symbol<short_integer> 10|71r29 73r29 75r23
+

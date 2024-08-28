@@ -1,0 +1,12 @@
+// Description:
+//    readInt avec indentificateur
+//
+// Resultats:
+//    extraneous input 'a' expecting ')'
+//
+// Historique:
+//    cree le 10/01/2023
+
+{
+    readInt(a);
+}

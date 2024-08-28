@@ -1,0 +1,12 @@
+// Description:
+//    readInt sans parenthese
+//
+// Resultats:
+//    mismatched input ';' expecting '(
+//
+// Historique:
+//    cree le 10/01/2023
+
+{
+    readInt;
+}

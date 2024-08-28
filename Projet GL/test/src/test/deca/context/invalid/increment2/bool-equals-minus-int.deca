@@ -1,0 +1,15 @@
+//Rule 3.37
+//Raison : type_unary_op(minus, int) = int
+
+//Resultats : Ligne 14 erreur de typage
+
+//Historique : cree le 09/01/2023
+
+
+{
+    int a = 2;
+    boolean b;
+
+    //Must be refused
+    b = -a;
+}

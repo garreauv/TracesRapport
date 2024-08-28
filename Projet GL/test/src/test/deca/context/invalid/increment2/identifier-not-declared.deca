@@ -1,0 +1,15 @@
+//test rule (0.1)
+
+// Raison : Opération partielle
+
+// Résultats : Ligne 14 "identifier not declared"
+
+// Historique :
+//  cree le 05/01/2023
+
+{
+    int x;
+
+    //Must be declared
+    y = x;
+}

@@ -1,0 +1,11 @@
+//Test basique sur les variables
+{
+    //int x = 5+3+2+7+18;
+    println(5);
+    println(5+3);
+    //int y = 5+x;
+    //print("hello world");
+    //int y = 37;
+    //println(x);
+    //print("hello");
+}

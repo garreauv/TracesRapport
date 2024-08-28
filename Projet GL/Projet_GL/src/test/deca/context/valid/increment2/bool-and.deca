@@ -1,0 +1,7 @@
+// boolean implementation
+
+// Historique : cree le 10/01/2023
+
+{
+    boolean a = true && false;
+}

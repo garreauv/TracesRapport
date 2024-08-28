@@ -1,0 +1,10 @@
+// Test rule 3.43 This in a main
+
+// Historique : cree le 18/01/2023
+
+class A{}
+
+{
+    // Must be refused
+    int x = this.x; 
+}

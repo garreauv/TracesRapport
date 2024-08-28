@@ -1,0 +1,37 @@
+//okokokokok
+{
+    boolean a = true;
+    boolean b = false;
+    boolean c = a != b;
+
+    if(c){
+        print("ok");
+    }
+    if(b != c){
+        print("ok");
+    }
+    if(a != c){
+        print("Error");
+    }
+    if(a != true){
+        print("Error");
+    }
+    if(a != false){
+        print("ok");
+    }
+    if(true != b){
+        print("ok");
+    }
+    if(false != b){
+        print("Error");
+    }
+    if(true != false){
+        print("ok");
+    }
+    if(true != true){
+        print("Error");
+    }
+    if(false != false){
+        println("Error");
+    }
+}

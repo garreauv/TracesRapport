@@ -1,0 +1,10 @@
+// Test not bool
+
+// Historique : cree le 10/01/2023
+
+{
+    boolean a = ! true;
+    boolean b = !false;
+
+    a = !b;
+}

@@ -1,0 +1,28 @@
+
+//The aim is to test a variety of methods including several operations
+class A{
+    protected float x = 3.5;
+    protected float y = 7.8*(3 + x*(6+24.5))*x;
+    boolean z = (y != x);
+    float calc(){
+        this.x = (3.14*this.y)+42/1.234;
+        this.y = 42.0/this.x;
+        return this.x + this.y + 3.14;
+
+    }
+
+    boolean compare(){
+        return (this.x < this.y) && this.z;
+    }
+}
+
+{
+    A a = new A();
+    print(a.calc());
+    if(a.compare()){
+        print("ok");
+    }
+    else{
+        print("error");
+    }
+}

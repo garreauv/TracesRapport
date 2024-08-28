@@ -1,0 +1,5 @@
+//Description
+//Wrong typecast boolean 
+{
+    boolean x = 5;
+}

@@ -1,0 +1,12 @@
+// Test rule 2.6 method name already declared
+
+// Historique : cree le 17/01/2023
+
+class A{
+    protected int a;
+
+    void meth(){}
+
+    // Must be refused
+    void meth(){}
+}

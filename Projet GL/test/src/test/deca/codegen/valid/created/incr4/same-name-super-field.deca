@@ -1,0 +1,25 @@
+//ok
+
+// Test super class with same name field
+
+// Historique : cree le 21/01/2023
+
+class A{
+    int x = 2;
+}
+
+class B extends A{
+    int x = 3;
+}
+
+{
+    A a = new A();
+    B b = new B();
+
+    if(b.x - a.x != 1){
+        print("error");
+    }
+    else{
+        print("ok");
+    }
+}

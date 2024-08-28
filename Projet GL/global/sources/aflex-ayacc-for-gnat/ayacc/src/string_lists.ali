@@ -1,0 +1,88 @@
+V "GNAT Lib v2020"
+A -gnato
+A -fstack-check=specific
+P ZX
+
+RN
+RV NO_ALLOCATORS
+RV NO_EXCEPTIONS
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_LOCAL_ALLOCATORS
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_ELABORATION_CODE
+
+U string_lists%b	string_lists.ads	1e44dcf3 NE OO PK
+Z ada.exceptions%s	a-except.adb		a-except.ali
+W lists%s		lists.adb		lists.ali  ED
+W string_pkg%s		string_pkg.adb		string_pkg.ali
+Z system%s		system.ads		system.ali
+Z system.exception_table%s  s-exctab.adb	s-exctab.ali
+Z system.standard_library%s  s-stalib.adb	s-stalib.ali
+Z unchecked_deallocation%s
+
+U string_lists%s	string_lists.ads	f1a8ee1b EB EE OO PK
+W lists%s		lists.adb		lists.ali
+W string_pkg%s		string_pkg.adb		string_pkg.ali
+Z system%s		system.ads		system.ali
+Z system.exception_table%s  s-exctab.adb	s-exctab.ali
+Z system.standard_library%s  s-stalib.adb	s-stalib.ali
+
+D ada.ads		20200819050642 76789da1 ada%s
+D a-except.ads		20200819050642 a7106115 ada.exceptions%s
+D a-unccon.ads		20200819050643 0e9b276f ada.unchecked_conversion%s
+D lists.ads		20221217092829 0f2f111c lists%s
+D lists.adb		20221217092829 cb81d4f2 lists%b
+D string_lists.ads	20221217092829 1e44dcf3 string_lists%s
+D string_lists.ads	20221217092829 1e44dcf3 string_lists%b
+D string_pkg.ads	20221217092829 e0c323f4 string_pkg%s
+D system.ads		20200819050647 085b6ffb system%s
+D s-exctab.ads		20200819050645 54135002 system.exception_table%s
+D s-parame.ads		20200819050646 4752c4cb system.parameters%s
+D s-stalib.ads		20200819050646 6b7a13f2 system.standard_library%s
+D s-traent.ads		20200819050646 005bf670 system.traceback_entries%s
+D unchdeal.ads		20200819050647 214516a4 unchecked_deallocation%s
+G a e
+G c s s s [s string_lists 11 1 none]
+G c Z s s [attach string_lists 102 15 11_1]
+G c Z s s [attach string_lists 124 14 11_1]
+G c Z s s [attach string_lists 137 15 11_1]
+G c Z s s [attach string_lists 151 15 11_1]
+G c Z s s [attach string_lists 166 14 11_1]
+G c Z s s [attach string_lists 186 14 11_1]
+G c Z s s [attach string_lists 197 14 11_1]
+G c Z s s [copy string_lists 211 14 11_1]
+G c Z s s [create string_lists 236 14 11_1]
+G c Z s s [deletehead string_lists 242 15 11_1]
+G c Z s s [deleteitem string_lists 257 15 11_1]
+G c Z s s [deleteitems string_lists 277 15 11_1]
+G c Z s s [destroy string_lists 298 15 11_1]
+G c Z s s [firstvalue string_lists 309 14 11_1]
+G c Z s s [isempty string_lists 325 14 11_1]
+G c Z s s [isinlist string_lists 332 14 11_1]
+G c Z s s [lastvalue string_lists 343 14 11_1]
+G c Z s s [length string_lists 359 14 11_1]
+G c Z s s [makelistiter string_lists 365 14 11_1]
+G c Z s s [more string_lists 383 14 11_1]
+G c Z s s [next string_lists 392 15 11_1]
+G c Z s s [replacehead string_lists 423 15 11_1]
+G c Z s s [replacetail string_lists 437 15 11_1]
+G c Z s s [tail string_lists 452 14 11_1]
+G c Z s s [equal string_lists 466 14 11_1]
+G c Z s s [listIP string_lists 484 10 11_1]
+G c Z s s [element_typeIP string_lists 490 10 11_1]
+G c Z s s [free string_lists 6 15 11_1]
+G r i none [s string_lists 11 1 none] [lists standard 13 9 none]
+G r c none [deleteitem string_lists 257 15 11_1] [equal string_pkg 410 14 none]
+G r c none [deleteitems string_lists 277 15 11_1] [equal string_pkg 410 14 none]
+G r c none [isinlist string_lists 332 14 11_1] [equal string_pkg 410 14 none]
+G r c none [equal string_lists 466 14 11_1] [equal string_pkg 410 14 none]
+X 4 lists.ads
+13k9*Lists 500e10 7|9w6 11r29
+X 7 string_lists.ads
+11K9*String_Lists[4|13]
+X 8 string_pkg.ads
+14K9*string_pkg 7|8w6 11r35 11r59 8|597e15
+95P10*string_type 7|11r46
+410V14*equal{boolean} 7|11r70
+
